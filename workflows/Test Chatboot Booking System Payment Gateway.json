@@ -1,0 +1,1006 @@
+{
+  "active": false,
+  "connections": {
+    "If Personal Chat": {
+      "main": [
+        [
+          {
+            "node": "Send Seen",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Seen": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Start Typing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start Typing": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Stop Typing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Stop Typing": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Send Text Reply",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Image Reply",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Text Reply Fallback",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CreatePayment": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GetProducts": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CreatePaymentData": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get QR Status": {
+      "main": [
+        [
+          {
+            "node": "If PAID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If PAID": {
+      "main": [
+        [
+          {
+            "node": "Update Payment Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Payment Status": {
+      "main": [
+        [
+          {
+            "node": "Send Confirmation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WAHA Trigger": {
+      "main": [
+        [],
+        [
+          {
+            "node": "If Personal Chat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Get QR Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-09T14:50:49.372Z",
+  "id": "MPA0wPyRlrPKGerH",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Test Chatboot Booking System Payment Gateway",
+  "nodes": [
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "04fd4f15-d813-49fd-9753-db2572946009",
+              "leftValue": "={{ $json.payload.from.split('@')[1] }}",
+              "rightValue": "c.us",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -2220,
+        460
+      ],
+      "id": "2741a919-5281-49aa-8743-c8e1aa4bf715",
+      "name": "If Personal Chat"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('WAHA Trigger').item.json.payload.body }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=Sekarang adalah tanggal {{ $now.format('yyyy-MM-dd HH:mm:ss') }}.\n\nKamu adalah seorang sales toko komputer bernama \"TK Jaya Raya\" yang bertugas menerima pesanan dari pelanggan melalui chat. Kamu harus melayani pelanggan dengan gaya bahasa yang santai, namun tetap sopan dan jangan terlalu kaku. Kamu harus benar-benar terlihat seperti manusia.\n\nJika pelanggan menanyakan produk, kamu bisa menggunakan tool \"GetProducts\" untuk mendapatkan list produk apa saja yang dimiliki oleh \"TK Jaya Raya\". Jangan pernah memberikan list produk terlalu banyak kepada customer, hanya berikan produk yang relevan dengan kebutuhan customer, maksimal 3 produk saja.\n\nKamu harus bertindak seperti keranjang belanja dengan mengingat apa saja pesanan customer beserta quantity nya untuk selanjutnya kamu total dan buat pembayaran menggunakan tool \"CreatePayment\" dengan membawa nominal nya (contoh : 10000, 15000 atau 19500 - tanpa tanda baca sama sekali). Dari tool tersebut, kamu akan mendapatkan respon \n\"qr_string\" dan reference ID dalam objek \"id\" pada respon API nya, kedua data tersebut perlu kamu catat ke tool \"CreatePaymentData\", lalu selanjutnya kamu harus respon chat customer sebagai gambar dengan url : \"https://quickchart.io/chart?cht=qr&chs=500x500&chl=<qr_string>\", berikan informasi bahwa pembayaran QRIS bisa dilakukan dari aplikasi m-Banking atau e-Wallet kesayangan pelanggan. Pembayaran akan langsung diproses maksimal 1 menit setelah pelanggan membayar.\n\nPENTING:\n- Saat mengirimkan QRIS pembayaran, pastikan type outputnya \"IMAGE\", bukan \"TEXT\"\n- Harga produk di sheet GetProducts sudah final, jangan pernah menambah ribuan! Jika tertulis harganya 125, berarti memang harganya 125 rupiah\n- JANGAN PERNAH BERHALUSINASI tentang produk dan harga, semua data harus valid!"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        -1560,
+        460
+      ],
+      "id": "a7910b60-bf9d-4795-ba48-2ad32bac2bab",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -1780,
+        680
+      ],
+      "id": "81e9cffe-9134-4147-b1f6-6611e11aeda0",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "zyMW783FwmXOC9wg",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('WAHA Trigger').item.json.payload.from }}C"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -1660,
+        680
+      ],
+      "id": "0efacf44-7db2-46a7-aaf2-1c1db244c9aa",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Seen",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        -2000,
+        460
+      ],
+      "id": "3ae59f86-8e14-44fb-9436-dac193de1b0f",
+      "name": "Send Seen",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Start Typing",
+        "session": "={{ $('WAHA Trigger').item.json.session }}",
+        "chatId": "={{ $('WAHA Trigger').item.json.payload.from }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        -980,
+        460
+      ],
+      "id": "e9496040-0129-4f48-9754-fbb5b839bfdf",
+      "name": "Start Typing",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 3
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -760,
+        460
+      ],
+      "id": "f6564480-e5bb-4508-b608-ada567d5b9ee",
+      "name": "Wait",
+      "webhookId": "14b9d8c9-5eaf-454f-965e-e98889aa5a7b"
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Stop Typing",
+        "session": "={{ $('WAHA Trigger').item.json.session }}",
+        "chatId": "={{ $('WAHA Trigger').item.json.payload.from }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        -540,
+        460
+      ],
+      "id": "0c6e2f83-7a07-48e8-b83d-94f01438831f",
+      "name": "Stop Typing",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"type\": \"TEXT or IMAGE\",\n  \"message\": \"Text message or image caption\",\n  \"image_url\":\"https://example.com/jpg\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        -1180,
+        680
+      ],
+      "id": "0004ad29-00e8-440d-9576-21da5f09a737",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('AI Agent').item.json.output.type.toUpperCase() }}",
+                    "rightValue": "TEXT",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "5d30a834-a2a7-4f69-8c8b-4f83a32c9140"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "TEXT"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "37bdec54-142e-48f2-a4f5-762bb9e3a5c1",
+                    "leftValue": "={{ $('AI Agent').item.json.output.type.toUpperCase() }}",
+                    "rightValue": "IMAGE",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "IMAGE"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -320,
+        460
+      ],
+      "id": "fa5769b0-a998-4392-a031-2cf3cd4876b9",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Text",
+        "session": "={{ $('WAHA Trigger').item.json.session }}",
+        "chatId": "={{ $('WAHA Trigger').item.json.payload.from }}",
+        "text": "={{ $('AI Agent').item.json.output.message }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        -100,
+        260
+      ],
+      "id": "20d34e48-5d65-4a9d-b122-71fccf40ff2d",
+      "name": "Send Text Reply",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Image",
+        "session": "={{ $('WAHA Trigger').item.json.session }}",
+        "chatId": "={{ $('WAHA Trigger').item.json.payload.from }}",
+        "file": "={\n  \"mimetype\": \"image/jpeg\",\n  \"filename\": \"filename.jpg\",\n  \"url\": \"{{ $('AI Agent').item.json.output.image_url }}\"\n}",
+        "caption": "={{ $('AI Agent').item.json.output.message }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        -100,
+        460
+      ],
+      "id": "7dfe37c8-ea77-4363-87f6-1fadfd480024",
+      "name": "Send Image Reply",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Use this tool to get QRIS for payment",
+        "method": "POST",
+        "url": "https://api.xendit.co/qr_codes",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"external_id\": \"{{$now.toMillis()}}\",\n  \"type\": \"DYNAMIC\",\n  \"currency\": \"IDR\",\n  \"amount\": {{$fromAI('amount', 'Total amount transaksi')}},\n  \"callback_url\": \"https://www.google.com\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        -1540,
+        680
+      ],
+      "id": "e48b052d-8ebd-43c0-a483-925679f212df",
+      "name": "CreatePayment",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "fzfIM3suaCZFSqml",
+          "name": "Xendit Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "12WHD2HU-Jm8vA-p0GP56BUbkdL9lIzd6PE9BevDQwyA",
+          "mode": "list",
+          "cachedResultName": "Market",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12WHD2HU-Jm8vA-p0GP56BUbkdL9lIzd6PE9BevDQwyA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Product",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12WHD2HU-Jm8vA-p0GP56BUbkdL9lIzd6PE9BevDQwyA/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        -1420,
+        680
+      ],
+      "id": "11a7b043-be14-414f-abe4-6e43437ec716",
+      "name": "GetProducts",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "A91a9DLyo89xMZ3C",
+          "name": "Google Sheet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Text",
+        "session": "={{ $('WAHA Trigger').item.json.session }}",
+        "chatId": "={{ $('WAHA Trigger').item.json.payload.from }}",
+        "text": "=Maaf, aku gak bisa mengerti apa yang kamu maksud. apakah bisa diperjelas?",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        -100,
+        660
+      ],
+      "id": "60600bd8-3761-4c48-9286-2b38e1574d78",
+      "name": "Send Text Reply Fallback",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "12WHD2HU-Jm8vA-p0GP56BUbkdL9lIzd6PE9BevDQwyA",
+          "mode": "list",
+          "cachedResultName": "Market",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12WHD2HU-Jm8vA-p0GP56BUbkdL9lIzd6PE9BevDQwyA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1853642857,
+          "mode": "list",
+          "cachedResultName": "Order",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12WHD2HU-Jm8vA-p0GP56BUbkdL9lIzd6PE9BevDQwyA/edit#gid=1853642857"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Created At": "={{ $now.format('yyyy-MM-dd HH:mm:ss') }}",
+            "Status": "PENDING",
+            "Sender": "={{ $('WAHA Trigger').item.json.payload.from }}",
+            "Total": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Total', ``, 'string') }}",
+            "Reference ID": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Reference_ID', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Created At",
+              "displayName": "Created At",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Total",
+              "displayName": "Total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Reference ID",
+              "displayName": "Reference ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Sender",
+              "displayName": "Sender",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        -1300,
+        680
+      ],
+      "id": "821e3fe2-a39b-4cb0-acf3-8043342c1333",
+      "name": "CreatePaymentData",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "A91a9DLyo89xMZ3C",
+          "name": "Google Sheet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://api.xendit.co/qr_codes/{{ $json['Reference ID'] }}/payments",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2000,
+        1180
+      ],
+      "id": "19f76753-8691-42d5-becd-47cf9f067608",
+      "name": "Get QR Status",
+      "alwaysOutputData": true,
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "fzfIM3suaCZFSqml",
+          "name": "Xendit Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6d0a8092-6b09-48b4-831f-3d6485b6dee5",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "COMPLETED",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1780,
+        1180
+      ],
+      "id": "20f01c7e-04e4-480d-a645-57749fa55114",
+      "name": "If PAID"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "12WHD2HU-Jm8vA-p0GP56BUbkdL9lIzd6PE9BevDQwyA",
+          "mode": "list",
+          "cachedResultName": "Market",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12WHD2HU-Jm8vA-p0GP56BUbkdL9lIzd6PE9BevDQwyA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1853642857,
+          "mode": "list",
+          "cachedResultName": "Order",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12WHD2HU-Jm8vA-p0GP56BUbkdL9lIzd6PE9BevDQwyA/edit#gid=1853642857"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Reference ID": "={{ $json.qr_code.id }}",
+            "Status": "PAID"
+          },
+          "matchingColumns": [
+            "Reference ID"
+          ],
+          "schema": [
+            {
+              "id": "Created At",
+              "displayName": "Created At",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Total",
+              "displayName": "Total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Reference ID",
+              "displayName": "Reference ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Sender",
+              "displayName": "Sender",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -1560,
+        1180
+      ],
+      "id": "b719d216-145c-47c6-8ed2-25f7af1efd61",
+      "name": "Update Payment Status",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "A91a9DLyo89xMZ3C",
+          "name": "Google Sheet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Text",
+        "session": "=LoveSemprong",
+        "chatId": "={{ $('Get row(s) in sheet').item.json.Sender }}",
+        "text": "Terima kasih! Pembayaran sudah diterima! Pesanan akan segera diproses dalam waktu 1x24 jam!",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        -1340,
+        1180
+      ],
+      "id": "1b031d31-65fb-4ef2-a350-33defcf86440",
+      "name": "Send Confirmation",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "seconds"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -2440,
+        1180
+      ],
+      "id": "e2d70da3-a959-4f88-9d7a-7f5904a5f399",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {},
+      "type": "@devlikeapro/n8n-nodes-waha.wahaTrigger",
+      "typeVersion": 202502,
+      "position": [
+        -2440,
+        0
+      ],
+      "id": "0a8f97be-f9f1-462c-ac49-aa66562f0514",
+      "name": "WAHA Trigger",
+      "webhookId": "35c688f5-06ce-4261-816b-1e3a57db06ed"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "12WHD2HU-Jm8vA-p0GP56BUbkdL9lIzd6PE9BevDQwyA",
+          "mode": "list",
+          "cachedResultName": "Market",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12WHD2HU-Jm8vA-p0GP56BUbkdL9lIzd6PE9BevDQwyA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1853642857,
+          "mode": "list",
+          "cachedResultName": "Order",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12WHD2HU-Jm8vA-p0GP56BUbkdL9lIzd6PE9BevDQwyA/edit#gid=1853642857"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Status",
+              "lookupValue": "PENDING"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -2220,
+        1180
+      ],
+      "id": "446928f2-455a-469f-9f9e-731e43be69bf",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "A91a9DLyo89xMZ3C",
+          "name": "Google Sheet"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-09T14:50:49.375Z",
+      "updatedAt": "2025-08-09T14:50:49.375Z",
+      "role": "workflow:owner",
+      "workflowId": "MPA0wPyRlrPKGerH",
+      "projectId": "OvJ502o4d8UTml2X"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-10T05:57:02.000Z",
+  "versionId": "8718b123-1488-414b-be7b-ee38b97bb70e"
+}
