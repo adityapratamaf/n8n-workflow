@@ -1,0 +1,3420 @@
+{
+  "active": false,
+  "connections": {
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Jika On Hold Chat Label",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WAHA Trigger": {
+      "main": [
+        [],
+        [
+          {
+            "node": "WAHA Input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WAHA Input": {
+      "main": [
+        [
+          {
+            "node": "Cek Jika Dari Saya",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cek Personal Chat": {
+      "main": [
+        [
+          {
+            "node": "Send Seen",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Jika On Hold Chat Label": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Jika Balas Pesan Dari App WA": {
+      "main": [
+        [
+          {
+            "node": "Pasang Label Hold Chat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cek Jika Dari Saya": {
+      "main": [
+        [
+          {
+            "node": "Jika Balas Pesan Dari App WA",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Cek Personal Chat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "AI Agent Laporan",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Start Typing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Stop Typing1": {
+      "main": [
+        [
+          {
+            "node": "Kirim Balasan2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start Typing1": {
+      "main": [
+        [
+          {
+            "node": "Tunggu1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tunggu1": {
+      "main": [
+        [
+          {
+            "node": "Stop Typing1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Stop Typing2": {
+      "main": [
+        [
+          {
+            "node": "Kirim Balasan8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start Typing2": {
+      "main": [
+        [
+          {
+            "node": "Tunggu2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tunggu2": {
+      "main": [
+        [
+          {
+            "node": "Stop Typing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent Laporan",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Stop Typing3": {
+      "main": [
+        [
+          {
+            "node": "Kirim Balasan3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start Typing3": {
+      "main": [
+        [
+          {
+            "node": "Tunggu3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tunggu3": {
+      "main": [
+        [
+          {
+            "node": "Stop Typing3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent Laporan": {
+      "main": [
+        [
+          {
+            "node": "Start Typing3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent Cek",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Stop Typing6": {
+      "main": [
+        [
+          {
+            "node": "Kirim Balasan6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start Typing6": {
+      "main": [
+        [
+          {
+            "node": "Tunggu6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tunggu6": {
+      "main": [
+        [
+          {
+            "node": "Stop Typing6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory2": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent Cek",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent Cek": {
+      "main": [
+        [
+          {
+            "node": "Start Typing6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent Booking": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cek": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent Cek",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cek_Lapangan": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent Booking",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Start Typing1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Start Typing5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent Booking1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent Booking1",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Start Typing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Append row in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet1": {
+      "main": [
+        [
+          {
+            "node": "Start Typing4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Stop Typing": {
+      "main": [
+        [
+          {
+            "node": "Kirim Balasan",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start Typing": {
+      "main": [
+        [
+          {
+            "node": "Tunggu",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tunggu": {
+      "main": [
+        [
+          {
+            "node": "Stop Typing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Stop Typing4": {
+      "main": [
+        [
+          {
+            "node": "Kirim Balasan9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start Typing4": {
+      "main": [
+        [
+          {
+            "node": "Tunggu4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tunggu4": {
+      "main": [
+        [
+          {
+            "node": "Stop Typing4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent Booking1": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cek_Lapangan1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent Booking1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Think1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent Booking1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Stop Typing5": {
+      "main": [
+        [
+          {
+            "node": "Kirim Balasan4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start Typing5": {
+      "main": [
+        [
+          {
+            "node": "Tunggu5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tunggu5": {
+      "main": [
+        [
+          {
+            "node": "Stop Typing5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent Booking",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Start Typing7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Stop Typing7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CreatePayment": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GetProducts": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CreatePaymentData": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start Typing7": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Stop Typing7": {
+      "main": [
+        [
+          {
+            "node": "Switch2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch2": {
+      "main": [
+        [
+          {
+            "node": "Send Text Reply",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Image Reply",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Text Reply Fallback",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get QR Status": {
+      "main": [
+        [
+          {
+            "node": "Cek Pembayaran",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Payment Status": {
+      "main": [
+        [
+          {
+            "node": "Send Confirmation Paid",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        []
+      ]
+    },
+    "Cek Label": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Seen": {
+      "main": [
+        [
+          {
+            "node": "Cek Label",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GetSchedule": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent Laporan",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "GetOrder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cek Pembayaran": {
+      "main": [
+        [
+          {
+            "node": "Update Payment Status",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Confirmation Un Paid",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GetOrder": {
+      "main": [
+        [
+          {
+            "node": "Get QR Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory 6": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent Booking",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-02T12:19:21.722Z",
+  "id": "4jH34zj7e7MLSvfu",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Project Chatboot Booking System Lapangan Tenis",
+  "nodes": [
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        720,
+        620
+      ],
+      "id": "38f505b2-455e-4cc1-b4c2-4d879526ae4e",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {},
+      "type": "@devlikeapro/n8n-nodes-waha.wahaTrigger",
+      "typeVersion": 202502,
+      "position": [
+        -600,
+        60
+      ],
+      "id": "6b15ccb0-bd20-4eb2-9513-bd1bebb6d9c7",
+      "name": "WAHA Trigger",
+      "webhookId": "35c688f5-06ce-4261-816b-1e3a57db06ed"
+    },
+    {
+      "parameters": {
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -380,
+        520
+      ],
+      "id": "71263617-4693-4071-9a85-29d562d6bde6",
+      "name": "WAHA Input"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ac89cc91-c202-498c-a7f0-acdffccf8821",
+              "leftValue": "={{ $json.payload.from.split('@')[1] }}",
+              "rightValue": "c.us",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        60,
+        620
+      ],
+      "id": "10caf4f6-442f-40b8-bf6f-d1087ee48f6e",
+      "name": "Cek Personal Chat"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "868c6a77-c8be-44e2-85d1-a8ac579f2548",
+              "leftValue": "={{ $json.data.some(item => item.name === \"Hold\") }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        940,
+        620
+      ],
+      "id": "d1cb95bf-f3f1-488d-92c0-632605352f8e",
+      "name": "Jika On Hold Chat Label"
+    },
+    {
+      "parameters": {
+        "resource": "Labels",
+        "operation": "Put Chat Labels",
+        "labels": "[\n  {\n    \"id\": \"9\"\n  }\n]",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        280,
+        420
+      ],
+      "id": "b55677ed-e9a6-4869-8c1b-e648debb7c62",
+      "name": "Pasang Label Hold Chat",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "68697ad3-d3dc-4a26-81cd-077c551572b1",
+              "leftValue": "={{ $json.payload.source }}",
+              "rightValue": "app",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        60,
+        420
+      ],
+      "id": "dbfc3dff-6a5b-4f3e-b6cb-71de83ac539b",
+      "name": "Jika Balas Pesan Dari App WA"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b3602e7c-a540-47f9-ba41-cef2b5b9fd29",
+              "leftValue": "={{ $json.payload.fromMe }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -160,
+        520
+      ],
+      "id": "65d6a16f-fc4d-48c8-b675-25740868feff",
+      "name": "Cek Jika Dari Saya"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "656bccc4-2e04-49c3-b7e6-425eb26de11d",
+                    "leftValue": "={{ $('WAHA Trigger').item.json.payload._data.message.conversation }}",
+                    "rightValue": "/laporan",
+                    "operator": {
+                      "type": "string",
+                      "operation": "startsWith"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "LAPORAN"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "dfa8914a-1e42-4e90-9f70-3dce164e42d6",
+                    "leftValue": "={{ $('WAHA Trigger').item.json.payload._data.message.conversation }}",
+                    "rightValue": "booking",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "CHAT"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        1160,
+        620
+      ],
+      "id": "1ddfae26-4879-4be0-9194-96bef632c69a",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8",
+          "mode": "list",
+          "cachedResultName": "Booking System Tennis Field",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Booking",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ID": "={{ $json.output.match(/\"ID\"\\s*:\\s*(\\d+)/)[1] }}",
+            "NO_TRANSAKSI": "={{ $json.output.match(/\"NO_TRANSAKSI\"\\s*:\\s*\"([^\"]+)\"/)[1] }}",
+            "TGL_BOOKING": "={{ $json.output.match(/\"TGL_BOOKING\"\\s*:\\s*\"([^\"]+)\"/)[1] }}",
+            "JAM_MULAI": "={{ $json.output.match(/\"JAM_MULAI\"\\s*:\\s*\"([^\"]+)\"/)[1] }}",
+            "JAM_SELESAI": "={{ $json.output.match(/\"JAM_SELESAI\"\\s*:\\s*\"([^\"]+)\"/)[1] }}",
+            "DURASI": "={{ $json.output.match(/\"DURASI\"\\s*:\\s*\"([^\"]+)\"/)[1] }}",
+            "NO_LAPANGAN": "={{ $json.output.match(/\"NO_LAPANGAN\"\\s*:\\s*\"([^\"]+)\"/)[1] }}",
+            "NAMA_PEMESAN": "={{ $json.output.match(/\"NAMA_PEMESAN\"\\s*:\\s*\"([^\"]+)\"/)[1].replace(/\\b\\w/g, c => c.toUpperCase()) }}",
+            "NO_TELP": "={{ '+' + $json.output.match(/\"NO_TELP\"\\s*:\\s*\"([^\"]+)\"/)[1].replace(/@c\\.us$/, '') }}",
+            "TGL_TRANSAKSI": "={{ $now.format('dd/MM/yyyy') }}",
+            "WAKTU_TRANSAKSI": "={{ $now.format('HH.mm.dd') }}",
+            "TOTAL_BAYAR": "={{ $json.output.match(/\"TOTAL_BAYAR\"\\s*:\\s*\"([^\"]+)\"/)[1] }}",
+            "STATUS_LAPANGAN": "={{ $json.output.match(/\"STATUS_LAPANGAN\"\\s*:\\s*\"([^\"]+)\"/)[1] }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "NO_TRANSAKSI",
+              "displayName": "NO_TRANSAKSI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TGL_BOOKING",
+              "displayName": "TGL_BOOKING",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "JAM_MULAI",
+              "displayName": "JAM_MULAI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "JAM_SELESAI",
+              "displayName": "JAM_SELESAI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "DURASI",
+              "displayName": "DURASI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "NO_LAPANGAN",
+              "displayName": "NO_LAPANGAN",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "NAMA_PEMESAN",
+              "displayName": "NAMA_PEMESAN",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "NO_TELP",
+              "displayName": "NO_TELP",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TGL_TRANSAKSI",
+              "displayName": "TGL_TRANSAKSI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "WAKTU_TRANSAKSI",
+              "displayName": "WAKTU_TRANSAKSI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TOTAL_BAYAR",
+              "displayName": "TOTAL_BAYAR",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "STATUS_LAPANGAN",
+              "displayName": "STATUS_LAPANGAN",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        1960,
+        2140
+      ],
+      "id": "e55e8530-ddba-4f65-922a-ef3c5e7b0df8",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "A91a9DLyo89xMZ3C",
+          "name": "Google Sheet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Stop Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        2400,
+        2340
+      ],
+      "id": "c29921c9-4f4f-4d1d-bd25-48c545543563",
+      "name": "Stop Typing1",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Start Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.id }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        1960,
+        2340
+      ],
+      "id": "2d379ad3-7421-40fb-b399-3981e09b5979",
+      "name": "Start Typing1",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": "={{ Math.floor(Math.random() * 7) + 1; }}"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2180,
+        2340
+      ],
+      "id": "d5fbc152-871d-4aff-a7ef-5d9c4b14fc44",
+      "name": "Tunggu1",
+      "webhookId": "eba829bd-e335-4656-a307-7315dd29c05f"
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Text",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "reply_to": "=",
+        "text": "=❌ AI Tidak Dapat Memahami Input Booking Lapangan\nContoh Dengan Format Yang Benar:\n\n\"Booking lapangan 1 hari Minggu jam 8 sampai jam 9 pagi atas nama Andi\"\n\n\"Saya mau main besok di lapangan 2 jam 16.00 sampai 17.00 atas nama Raka\"\n\n✅ Tips:\nSebutkan nomor lapangan yang ingin dibooking\nSebutkan tanggal dan jam main (mulai & selesai)\nSebutkan nama pemesan\n\nJika kamu hanya ingin cek ketersediaan, gunakan format seperti:\n\"cek lapangan besok jam 7 pagi\"",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        2620,
+        2340
+      ],
+      "id": "265d87aa-4da4-44bc-9e2b-98ce128a9845",
+      "name": "Kirim Balasan2",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Stop Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        2620,
+        2140
+      ],
+      "id": "f7658575-f49d-4131-a732-2181995fb438",
+      "name": "Stop Typing2",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Start Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.id }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        2180,
+        2140
+      ],
+      "id": "85d7f1b6-eafe-418f-bc58-151136dd8865",
+      "name": "Start Typing2",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": "={{ Math.floor(Math.random() * 7) + 1; }}"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2400,
+        2140
+      ],
+      "id": "9fb68819-e5bf-48bf-a8a1-51f2559db194",
+      "name": "Tunggu2",
+      "webhookId": "eba829bd-e335-4656-a307-7315dd29c05f"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1580,
+        640
+      ],
+      "id": "4d68a817-fd5c-4d2f-9be2-79647959542c",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "Xapk9tmeV0qasCh0",
+          "name": "Google Gemini(PaLM) Api"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Stop Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        2620,
+        520
+      ],
+      "id": "dc418045-9cf9-4f06-ae2e-3b857f5b5e05",
+      "name": "Stop Typing3",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Start Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.id }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        2180,
+        520
+      ],
+      "id": "9c5cbf71-da63-4e6c-811b-c4822a449429",
+      "name": "Start Typing3",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": "={{ Math.floor(Math.random() * 7) + 1; }}"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2400,
+        520
+      ],
+      "id": "777e0a4c-d51e-4a50-8a76-d92853234084",
+      "name": "Tunggu3",
+      "webhookId": "eba829bd-e335-4656-a307-7315dd29c05f"
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Text",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "text": "={{ $('AI Agent Laporan').item.json.output }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        2840,
+        520
+      ],
+      "id": "85191e75-85f6-4da1-8ac3-23eb5cd40f74",
+      "name": "Kirim Balasan3",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('Cek Jika Dari Saya').item.json.payload._data.message.conversation }}",
+        "options": {
+          "systemMessage": "Kamu adalah asisten laporan booking untuk user bangtutorial.\n\n🕒 INFORMASI WAKTU:\n\nWaktu sekarang: {{ $now }}\n\nTanggal hari ini: {{ $today.format('yyyy-MM-dd') }}\n\n🎯 TUGAS:\n\nAnalisa permintaan user untuk laporan booking lapangan tenis.\n\nGunakan tool \"catatan_booking\" untuk ambil data booking lapangan.\n\nFilter data sesuai periode yang diminta:\n\n\"hari ini\" → data booking tanggal hari ini\n\n\"minggu ini\" → data booking dalam 7 hari terakhir\n\n\"bulan ini\" → data booking dalam bulan berjalan\n\nHitung total booking dan durasi total pemakaian lapangan (dalam jam)\n\nTampilkan laporan rapi dalam Bahasa Indonesia\n\n📁 STRUKTUR DATA SHEETS:\n\nKolom A: Nama\n\nKolom B: No. Lapangan\n\nKolom C: Tanggal Booking\n\nKolom D: Waktu Mulai\n\nKolom E: Waktu Selesai\n\nKolom F: Durasi (dalam jam)\n\n📌 FORMAT LAPORAN:\n\n🎾 Laporan Booking Lapangan Tenis [Periode]\n📅 [Rentang Tanggal]\n\n📊 Total Booking: [jumlah booking] kali\n⏱️ Total Durasi Main: [total durasi] Jam\n\n📋 Detail Booking:\n📅 [Tanggal Booking]\n🧍 [Nama]\n🏟️ [No. Lapangan]\n🕐 Jam: [Waktu Mulai] - [Waktu Selesai]\n⏳ Durasi: [Durasi] Jam\n🔁 PENTING:\n\nUrutkan dari yang terbaru ke terlama\n\nGunakan format waktu 24 jam dengan titik (contoh: 16.30)\n\nTambahkan emoji sesuai format\n\nPisahkan setiap booking dengan garis --\n\nJika tidak ada data untuk periode, berikan pesan ramah:\n\n\"Tidak Ada Data Booking Lapangan Tenis Pada Periode Tersebut\""
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        1600,
+        420
+      ],
+      "id": "07280ed4-45fb-455a-a431-9aa0843394cc",
+      "name": "AI Agent Laporan"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1280,
+        3020
+      ],
+      "id": "c63f2cb9-2eb6-4d01-9af7-9c5c76f38c64",
+      "name": "Google Gemini Chat Model3",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "Xapk9tmeV0qasCh0",
+          "name": "Google Gemini(PaLM) Api"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Stop Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        2200,
+        2900
+      ],
+      "id": "4235771a-dc28-4d6f-a91f-1d84a758d1b6",
+      "name": "Stop Typing6",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Start Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.id }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        1760,
+        2900
+      ],
+      "id": "5fff3bca-43dd-4948-be17-4197693322cf",
+      "name": "Start Typing6",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": "={{ Math.floor(Math.random() * 7) + 1; }}"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1980,
+        2900
+      ],
+      "id": "f9f762fe-9045-4c73-b370-049ad260f097",
+      "name": "Tunggu6",
+      "webhookId": "eba829bd-e335-4656-a307-7315dd29c05f"
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Text",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "text": "={{ $('AI Agent Cek').item.json.output }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        2420,
+        2900
+      ],
+      "id": "f8ce5e59-797f-46cc-89f0-5b59bb74d622",
+      "name": "Kirim Balasan6",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('WAHA Input').item.json.session }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        1440,
+        3020
+      ],
+      "id": "cac53785-0a50-4809-9688-92625ca4bfc6",
+      "name": "Simple Memory2"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('WAHA Input').item.json.payload._data.message.conversation }}",
+        "options": {
+          "systemMessage": "prompt: AI Agent Cek Ketersediaan Lapangan Tenis\ndeskripsi: |\n  Kamu adalah AI Customer Service untuk layanan cek jadwal dan ketersediaan lapangan tenis. \n  Tugasmu adalah menjawab ketersediaan lapangan tenis berdasarkan input user.\n\naturan_penting:\n  - Gunakan jam format 24 jam dengan titik, contoh: 08.00 - 10.00\n  - Waktu operasional: Setiap hari dari 06.00 - 22.00 WIB\n  - Di luar jam tersebut, status: TUTUP\n  - Tidak menambahkan penjelasan apapun selain format output\n  - Jika input tidak lengkap atau tidak dipahami, balas dengan ERROR\n\nekstrak_input:\n  - Tanggal booking (contoh: hari ini, besok, 2 Agustus 2025)\n  - Jam booking (format apapun, ubah ke 24 jam dengan titik)\n  - Nomor lapangan (opsional, jika tidak disebut, tampilkan semua)\n\nstruktur_data_booking:\n  - tgl_booking: tanggal booking\n  - jam_mulai: jam mulai main\n  - jam_selesai: jam selesai main\n  - no_lapangan: nomor lapangan\n  - status_lapangan: \"BOOKED\" atau \"TERSEDIA\"\n  - nama_pemesan: nama orang (jika sudah dipesan)\n\ncontoh_input_user:\n  - \"Cek lapangan 2 besok jam 10 pagi\"\n  - \"Lapangan mana yang kosong hari Minggu jam 7 malam\"\n  - \"Semua lapangan kosong gak hari ini jam 8?\"\n\nformat_output:\n  jika_nomor_lapangan_disebutkan: |\n    Jadwal Lapangan {{no_lapangan}}  \n    Tanggal : {{tgl_booking}}  \n    Jam : {{jam_mulai}} - {{jam_selesai}}  \n    Status : {{ status_lapangan == \"BOOKED\" ? \"❌ Sudah Dipesan oleh \" ~ nama_pemesan : \"✅ Tersedia\" }}\n\n    Untuk booking lapangan ini, ketik:  \n    Booking lapangan {{no_lapangan}} tanggal {{tgl_booking}} jam {{jam_mulai}} sampai {{jam_selesai}} atas nama [nama kamu]\n\n  jika_tidak_disebutkan_nomor_lapangan: |\n    Ketersediaan Semua Lapangan  \n    Tanggal : {{tgl_booking}}  \n    Jam : {{jam_mulai}} - {{jam_selesai}}\n\n    Lapangan 1 : {{status_l1}}  \n    Lapangan 2 : {{status_l2}}  \n    Lapangan 3 : {{status_l3}}  \n    Lapangan 4 : {{status_l4}}\n\n    Untuk booking, ketik:  \n    Booking lapangan [nomor] tanggal [tgl_booking] jam [jam_mulai] sampai [jam_selesai] atas nama [nama kamu]\n\n  jika_diluar_jam_operasional: |\n    Jadwal Tidak Tersedia  \n    Tanggal : {{tgl_booking}}  \n    Jam : {{jam_mulai}} - {{jam_selesai}}  \n    Status : TUTUP (di luar jam operasional 06.00 - 22.00 WIB)\n\n  jika_input_tidak_dipahami: |\n    ERROR: Permintaan tidak dapat dipahami oleh sistem booking\n\n    Contoh yang valid:\n    - \"Apakah lapangan 1 kosong besok jam 4 sore?\"\n    - \"Lapangan mana saja yang kosong hari Minggu jam 10?\"\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        1360,
+        2800
+      ],
+      "id": "7d406782-8d8d-478d-9197-fcaca400fa80",
+      "name": "AI Agent Cek"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('Cek Jika Dari Saya').item.json.payload._data.message.conversation }}",
+        "options": {
+          "systemMessage": "=✅ PROMPT AGEN AI – BOOKING LAPANGAN TENIS + GSheet Che\n\n⛳️ Kamu adalah parser dan AI Agent booking lapangan tenis yang mengubah input teks fleksibel menjadi data terstruktur dan memvalidasi ketersediaan jadwal di Google Sheet \"Cek_Lapangan\".\n\n---\n\n📅 Waktu Sekarang: {{ $now }}  \n📆 Tanggal Hari Ini: {{ $today.format('yyyy-MM-dd') }}  \n🕐 Jam Operasional: Setiap Hari pukul 06.00 – 22.00 WIB  \n⛔ Di luar jam tersebut, booking tidak dapat dilakukan.\n\n---\n\n🎯 TUGAS UTAMA:\n1. Terima input teks booking dari user.\n2. Ubah teks menjadi format data terstruktur sesuai format berikut.\n3. Periksa ketersediaan jadwal booking pada sheet GSheet bernama **`Cek_Lapangan`** via `{{ $json.booked_data }}`.\n4. Output salah satu dari tiga hasil:\n   - `TERSEDIA` → jika lapangan tersedia dan waktu valid\n   - `TIDAK TERSEDIA` → jika lapangan sudah terbooking atau waktu tidak tersedia\n   - `ERROR` → jika input tidak bisa dipahami atau terjadi kesalahan parsing/data tidak lengkap\n\n---\n\n📝 FORMAT OUTPUT DATA BOOKING:\n\nID : [ID unik dan otomatis berurutan setiap transaksi]  \nNO_TRANSAKSI : [Format \"LT-bulantahun-nomorurut\", contoh: LT-0825-001]  \nTGL_BOOKING : [tanggal booking: \"hari ini\", \"besok\", atau format tanggal lengkap]  \nJAM_MULAI : [format 24 jam dengan titik, contoh: 08.00]  \nJAM_SELESAI : [format 24 jam dengan titik, contoh: 10.00]  \nDURASI : [selisih jam selesai – jam mulai, contoh: 2 Jam]  \nNO_LAPANGAN : [Lapangan 1 – 4, jika tidak disebutkan pilih otomatis dari yang tersedia]  \nNAMA_PEMESAN : [nama dari input, default: \"Pengguna Tidak Dikenal\"]  \nNO_TELP : {{ $('WAHA Trigger').item.json.payload.from }}  \nTGL_TRANSAKSI : {{ $now.format('dd-MM-yyyy') }}  \nTOTAL_BAYAR : [durasi * 40.000, contoh: 80.000]  \nSTATUS_LAPANGAN : BOOKED\n\n---\n\n📌 CONTOH INPUT:\n\"booking lapangan hari ini di lapangan 1 dari jam 8 sampai jam 9 pagi\"\n\n📌 CONTOH OUTPUT:\nID : 1  \nNO_TRANSAKSI : LT-0825-001  \nTGL_BOOKING : 01/08/2025  \nJAM_MULAI : 08.00  \nJAM_SELESAI : 09.00  \nDURASI : 1 Jam  \nNO_LAPANGAN : Lapangan 1  \nNAMA_PEMESAN : Aditya Pratama Febriono  \nNO_TELP : {{ $('WAHA Trigger').item.json.payload.from }}  \nTGL_TRANSAKSI : {{ $now.format('dd-MM-yyyy') }}  \nTOTAL_BAYAR : 40.000  \nSTATUS_LAPANGAN : BOOKED\n\n---\n\n⚠️ JIKA ADA MASALAH / GAGAL DIPAHAMI:\nOutputkan secara eksplisit:\nERROR\n\n---\n\n✅ SETELAH FORMAT BERHASIL DIBENTUK:\nCek jadwal pada tool `GSheet Read` (`{{ $json.booked_data }}`):\n- Jika tersedia → **kirim output**: `TERSEDIA`\n- Jika tidak tersedia → **kirim output**: `TIDAK TERSEDIA`\n- Jika parsing error / data kurang → **kirim output**: `ERROR`\n\n---\n\n📌 PENTING:\n- Jangan tampilkan penjelasan.\n- Hanya tampilkan hasil akhir berupa **output JSON booking** atau **output kata**: `TERSEDIA`, `TIDAK TERSEDIA`, `ERROR`\n- Gunakan format jam 24 jam (pakai titik, bukan koma atau titik dua)\n- Pastikan validasi jam operasional (antara 06.00 – 22.00)"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        1340,
+        2140
+      ],
+      "id": "7eaad9f3-273a-4979-9324-6c38ab13da87",
+      "name": "AI Agent Booking"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8",
+          "mode": "list",
+          "cachedResultName": "Booking System Tennis Field",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Booking",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        1560,
+        3020
+      ],
+      "id": "e5c50d24-2aa1-442b-9640-c6f4d5b96c2a",
+      "name": "Cek",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "A91a9DLyo89xMZ3C",
+          "name": "Google Sheet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Text",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "reply_to": "=",
+        "text": "=✅ Booking Lapangan Tenis Berhasil\n\n📄 No. Transaksi : {{ $('Append row in sheet').item.json.NO_TRANSAKSI }}\n\n🏟️ Lapangan : {{ $('Append row in sheet').item.json.NO_LAPANGAN }}\n📅 Tanggal Booking : {{ $('Append row in sheet').item.json.TGL_BOOKING }}\n🕐 Jam Main : {{ $('Append row in sheet').item.json.JAM_MULAI }} - {{ $('Append row in sheet').item.json.JAM_SELESAI }}\n⏳ Durasi : {{ $('Append row in sheet').item.json.DURASI }}\n🧍 Nama Pemesan : {{ $('Append row in sheet').item.json.NAMA_PEMESAN }}\n📞 No. Telepon : {{ $('Append row in sheet').item.json.NO_TELP }}\n💰 Total Pembayaran : {{ $('Append row in sheet').item.json.TOTAL_BAYAR }}\n\n🗓️ Tanggal Transaksi : {{ $('Append row in sheet').item.json.TGL_TRANSAKSI }}\n\n🎾 Terima Kasih, Silakan Datang 20 Menit Sebelum Waktu Bermain. Semoga Permainanmu Menyenangkan ! ",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        2840,
+        2140
+      ],
+      "id": "3b363cc3-38fa-413b-8a54-860ca33e116c",
+      "name": "Kirim Balasan8",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8",
+          "mode": "list",
+          "cachedResultName": "Booking System Tennis Field",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Booking",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        1540,
+        2360
+      ],
+      "id": "6b600e39-ca4d-4c81-aadf-bbc4b4bec241",
+      "name": "Cek_Lapangan",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "A91a9DLyo89xMZ3C",
+          "name": "Google Sheet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "4eb628ee-79b3-4142-9677-e7c4aa102701",
+                    "leftValue": "={{ $json.output }}",
+                    "rightValue": "=ERROR",
+                    "operator": {
+                      "type": "string",
+                      "operation": "startsWith"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "ERROR"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.output }}",
+                    "rightValue": "=TIDAK TERSEDIA",
+                    "operator": {
+                      "type": "string",
+                      "operation": "startsWith"
+                    },
+                    "id": "2e2ced37-4f9f-4ce5-872e-f0a34cb03860"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "TIDAK TERSEDIA"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "8486b230-f0b4-4872-bb2c-c691876f0b9e",
+                    "leftValue": "={{ $json.output }}",
+                    "rightValue": "=TERSEDIA",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "TERSEDIA"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        1740,
+        2140
+      ],
+      "id": "7af510b1-6cc1-462e-b0c8-75840c8263b7",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -1100,
+        2360
+      ],
+      "id": "25a106d7-b484-4277-825c-bb6610fbc0bb",
+      "name": "Google Gemini Chat Model2",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "Xapk9tmeV0qasCh0",
+          "name": "Google Gemini(PaLM) Api"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('WAHA Input').item.json.session }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -980,
+        2360
+      ],
+      "id": "8f7fffe1-4858-444c-a0ca-24a6aa362e61",
+      "name": "Simple Memory1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "8280d273-ee44-4256-9b24-f619e4d1df95",
+              "leftValue": "={{ $json.output }}",
+              "rightValue": "ERROR:",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -540,
+        2140
+      ],
+      "id": "313c8023-2c84-4612-8de0-81c7eae7dc3e",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8",
+          "mode": "list",
+          "cachedResultName": "Booking System Tennis Field",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Booking",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ID": "={{ $json.output.match(/ID\\s*:\\s*(\\d+)/)[1].trim() }}",
+            "NO_TRANSAKSI": "={{ $json.output.match(/NO_TRANSAKSI\\s*:\\s*(LT-\\d{4}-\\d{3})/)[1] }}",
+            "TGL_BOOKING": "={{ $json.output.match(/TGL_BOOKING\\s*:\\s*(.+)/)[1].trim() }}",
+            "JAM_MULAI": "={{ $json.output.match(/JAM_MULAI\\s*:\\s*(.+)/)[1].trim() }}",
+            "JAM_SELESAI": "={{ $json.output.match(/JAM_SELESAI\\s*:\\s*(.+)/)[1].trim() }}",
+            "DURASI": "={{ $json.output.match(/DURASI\\s*:\\s*(.+)/)[1].trim() }}",
+            "NO_LAPANGAN": "={{ $json.output.match(/NO_LAPANGAN\\s*:\\s*(.+)/)[1].trim() }}",
+            "NAMA_PEMESAN": "={{ $json.output.match(/NAMA_PEMESAN\\s*:\\s*(.+)/)[1].trim() }}",
+            "NO_TELP": "={{ '+' + $json.output.match(/NO_TELP\\s*:\\s*(.+)/)[1].trim().replace(/@c\\.us$/, '') }}",
+            "TGL_TRANSAKSI": "={{ $now.format('dd/MM/yyyy') }}",
+            "WAKTU_TRANSAKSI": "={{ $now.format('HH.mm.dd') }}",
+            "TOTAL_BAYAR": "={{ $json.output.match(/TOTAL_BAYAR\\s*:\\s*(.+)/)[1].trim() }}",
+            "STATUS_LAPANGAN": "={{ $json.output.match(/STATUS_LAPANGAN\\s*:\\s*(.+)/)[1].trim() }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "NO_TRANSAKSI",
+              "displayName": "NO_TRANSAKSI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TGL_BOOKING",
+              "displayName": "TGL_BOOKING",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "JAM_MULAI",
+              "displayName": "JAM_MULAI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "JAM_SELESAI",
+              "displayName": "JAM_SELESAI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "DURASI",
+              "displayName": "DURASI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "NO_LAPANGAN",
+              "displayName": "NO_LAPANGAN",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "NAMA_PEMESAN",
+              "displayName": "NAMA_PEMESAN",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "NO_TELP",
+              "displayName": "NO_TELP",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TGL_TRANSAKSI",
+              "displayName": "TGL_TRANSAKSI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "WAKTU_TRANSAKSI",
+              "displayName": "WAKTU_TRANSAKSI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TOTAL_BAYAR",
+              "displayName": "TOTAL_BAYAR",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "STATUS_LAPANGAN",
+              "displayName": "STATUS_LAPANGAN",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -320,
+        2240
+      ],
+      "id": "a4cc1eb0-8690-455b-b255-cdf70158f927",
+      "name": "Append row in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "A91a9DLyo89xMZ3C",
+          "name": "Google Sheet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Stop Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        120,
+        2040
+      ],
+      "id": "36e75461-505a-42ec-8c83-d100f60b3089",
+      "name": "Stop Typing",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Start Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.id }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        -320,
+        2040
+      ],
+      "id": "7b85616d-10e6-4eb5-aff5-ffc25bf4805a",
+      "name": "Start Typing",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": "={{ Math.floor(Math.random() * 7) + 1; }}"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -100,
+        2040
+      ],
+      "id": "cd6dea82-c200-4a88-aad2-2ae71301534e",
+      "name": "Tunggu",
+      "webhookId": "eba829bd-e335-4656-a307-7315dd29c05f"
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Text",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "reply_to": "=",
+        "text": "=❌ AI Tidak Dapat Memahami Input Booking Lapangan\nContoh Dengan Format Yang Benar:\n\n\"Booking lapangan 1 hari Minggu jam 8 sampai jam 9 pagi atas nama Andi\"\n\n\"Saya mau main besok di lapangan 2 jam 16.00 sampai 17.00 atas nama Raka\"\n\n✅ Tips:\nSebutkan nomor lapangan yang ingin dibooking\nSebutkan tanggal dan jam main (mulai & selesai)\nSebutkan nama pemesan\n\nJika kamu hanya ingin cek ketersediaan, gunakan format seperti:\n\"cek lapangan besok jam 7 pagi\"",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        340,
+        2040
+      ],
+      "id": "dd182f84-876c-40d3-85e8-25f1bc67a010",
+      "name": "Kirim Balasan",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Stop Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        340,
+        2240
+      ],
+      "id": "e0cc45e8-fbc7-4907-89c0-39a86179200d",
+      "name": "Stop Typing4",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Start Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.id }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        -100,
+        2240
+      ],
+      "id": "bf881152-e0f3-4d3f-a44a-55016f786889",
+      "name": "Start Typing4",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": "={{ Math.floor(Math.random() * 7) + 1; }}"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        120,
+        2240
+      ],
+      "id": "3ea40603-5f62-4925-88cb-ffc9613a2a8e",
+      "name": "Tunggu4",
+      "webhookId": "eba829bd-e335-4656-a307-7315dd29c05f"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('Cek Jika Dari Saya').item.json.payload._data.message.conversation }}",
+        "options": {
+          "systemMessage": "=✅ PROMPT AGEN AI – BOOKING LAPANGAN TENIS + GSheet Check\ntxt\nCopy\nEdit\n⛳️ Kamu adalah parser dan AI Agent booking lapangan tenis yang mengubah input teks fleksibel menjadi data terstruktur dan memvalidasi ketersediaan jadwal di Google Sheet \"Cek_Lapangan\".\n\n📅 Waktu Sekarang: {{ $now }}  \n📆 Tanggal Hari Ini: {{ $today.format('yyyy-MM-dd') }}  \n🕐 Jam Operasional: Setiap Hari pukul 06.00 – 22.00 WIB  \n⛔ Di luar jam tersebut, booking tidak dapat dilakukan.\n\n---\n\n🎯 TUGAS UTAMA:\n1. Terima input teks booking dari user.\n2. Ubah teks menjadi format data terstruktur sesuai format berikut.\n3. Periksa ketersediaan jadwal booking pada sheet GSheet bernama **`Cek_Lapangan`** via `{{ $json.booked_data }}`.\n4. Output salah satu dari tiga hasil:\n   - `TERSEDIA` → jika lapangan tersedia dan waktu valid\n   - `TIDAK TERSEDIA` → jika lapangan sudah terbooking atau waktu tidak tersedia\n   - `ERROR` → jika input tidak bisa dipahami atau terjadi kesalahan parsing/data tidak lengkap\n\n---\n\n📝 FORMAT OUTPUT DATA BOOKING:\n\nID : [ID unik dan otomatis berurutan setiap transaksi]  \nNO_TRANSAKSI : [Format \"LT-bulantahun-nomorurut\", contoh: LT-0825-001]  \nTGL_BOOKING : [tanggal booking: \"hari ini\", \"besok\", atau format tanggal lengkap]  \nJAM_MULAI : [format 24 jam dengan titik, contoh: 08.00]  \nJAM_SELESAI : [format 24 jam dengan titik, contoh: 10.00]  \nDURASI : [selisih jam selesai – jam mulai, contoh: 2 Jam]  \nNO_LAPANGAN : [Lapangan 1 – 4, jika tidak disebutkan pilih otomatis dari yang tersedia]  \nNAMA_PEMESAN : [nama dari input, default: \"Pengguna Tidak Dikenal\"]  \nNO_TELP : {{ $('WAHA Trigger').item.json.payload.from }}  \nTGL_TRANSAKSI : {{ $now.format('dd-MM-yyyy') }}  \nTOTAL_BAYAR : [durasi * 40.000, contoh: 80.000]  \nSTATUS_LAPANGAN : BOOKED\n\n---\n\n📌 CONTOH INPUT:\n\"booking lapangan hari ini di lapangan 1 dari jam 8 sampai jam 9 pagi\"\n\n📌 CONTOH OUTPUT:\nID : 1  \nNO_TRANSAKSI : LT-0825-001  \nTGL_BOOKING : 01/08/2025  \nJAM_MULAI : 08.00  \nJAM_SELESAI : 09.00  \nDURASI : 1 Jam  \nNO_LAPANGAN : Lapangan 1  \nNAMA_PEMESAN : Aditya Pratama Febriono  \nNO_TELP : {{ $('WAHA Trigger').item.json.payload.from }}  \nTGL_TRANSAKSI : {{ $now.format('dd-MM-yyyy') }}  \nTOTAL_BAYAR : 40.000  \nSTATUS_LAPANGAN : BOOKED\n\n---\n\n⚠️ JIKA ADA MASALAH / GAGAL DIPAHAMI:\nOutputkan secara eksplisit:\nERROR: text tidak dapat dipahami oleh booking system\n\nmarkdown\nCopy\nEdit\n\n---\n\n✅ SETELAH FORMAT BERHASIL DIBENTUK:\nCek jadwal pada tool `GSheet Read` (`{{ $json.booked_data }}`):\n- Jika tersedia → **kirim output**: `TERSEDIA`\n- Jika tidak tersedia → **kirim output**: `TIDAK TERSEDIA`\n- Jika parsing error / data kurang → **kirim output**: `ERROR`\n\n---\n\n📌 PENTING:\n- Jangan tampilkan penjelasan.\n- Hanya tampilkan hasil akhir berupa **output JSON booking** atau **output kata**: `TERSEDIA`, `TIDAK TERSEDIA`, `ERROR`\n- Gunakan format jam 24 jam (pakai titik, bukan koma atau titik dua)\n- Pastikan validasi jam operasional (antara 06.00 – 22.00)\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        -1000,
+        2140
+      ],
+      "id": "6e7f6050-829c-48ec-8709-2b85d53517bf",
+      "name": "AI Agent Booking1"
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Text",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "reply_to": "=",
+        "text": "=✅ Booking Lapangan Tenis Berhasil\n\n📄 No. Transaksi : {{ $('Append row in sheet1').item.json.NO_TRANSAKSI }}\n\n🏟️ Lapangan : {{ $('Append row in sheet1').item.json.NO_LAPANGAN }}\n📅 Tanggal Booking : {{ $('Append row in sheet1').item.json.TGL_BOOKING }}\n🕐 Jam Main : {{ $('Append row in sheet1').item.json.JAM_MULAI }} - {{ $('Append row in sheet1').item.json.JAM_SELESAI }}\n⏳ Durasi : {{ $('Append row in sheet1').item.json.DURASI }}\n🧍 Nama Pemesan : {{ $('Append row in sheet1').item.json.NAMA_PEMESAN }}\n📞 No. Telepon : {{ $('Append row in sheet1').item.json.NO_TELP }}\n💰 Total Pembayaran : {{ $('Append row in sheet1').item.json.TOTAL_BAYAR }}\n\n🗓️ Tanggal Transaksi : {{ $('Append row in sheet1').item.json.TGL_TRANSAKSI }}\n\n🎾 Terima Kasih, Silakan Datang 20 Menit Sebelum Waktu Bermain. Semoga Permainanmu Menyenangkan ! ",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        560,
+        2240
+      ],
+      "id": "31548fa0-5e0c-4d7e-ab69-7b0bea1d0b3c",
+      "name": "Kirim Balasan9",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8",
+          "mode": "list",
+          "cachedResultName": "Booking System Tennis Field",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Booking",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        -860,
+        2360
+      ],
+      "id": "352cadd4-92a2-4b2e-adbe-e55f46e8a794",
+      "name": "Cek_Lapangan1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "A91a9DLyo89xMZ3C",
+          "name": "Google Sheet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "description": "🎾 Kamu adalah AI Agent Booking Lapangan Tenis.\n\nTugasmu:\n- Mengecek apakah permintaan booking lapangan tersedia berdasarkan data dari Google Sheet \"Cek_Lapangan\".\n- Kembalikan jawaban berupa: `TERSEDIA` atau `TIDAK TERSEDIA`.\n\nAturan:\n\n1. Jam operasional lapangan adalah pukul 06.00 - 22.00 WIB. Jika jam di luar rentang ini → kembalikan `TIDAK TERSEDIA`.\n2. Cek apakah ada data bentrok (tabrakan) dengan data booking yang ada:\n   - Jika ada booking lain di lapangan dan waktu yang sama → `TIDAK TERSEDIA`\n   - Jika tidak ada tabrakan → `TERSEDIA`\n3. Jika tidak menyebutkan nomor lapangan → abaikan logika ini, berikan `TERSEDIA` (cek lanjut dilakukan di proses selanjutnya).\n4. Selalu periksa data dari Sheet bernama \"Cek_Lapangan\" sebelum memutuskan.\n\nData input diberikan dalam format:\n- Tanggal Booking: {{ $json.tgl_booking }}\n- Jam Mulai: {{ $json.jam_mulai }}\n- Jam Selesai: {{ $json.jam_selesai }}\n- Nomor Lapangan: {{ $json.no_lapangan }}\n- Daftar Booking Saat Ini: {{ $json.booked_data }} (berisi array data dari Google Sheet)\n\n---\n\nKembalikan hasil hanya berupa:\n\n- `TERSEDIA`\n- `TIDAK TERSEDIA`\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1,
+      "position": [
+        -740,
+        2360
+      ],
+      "id": "19cd7172-01e6-492c-bab1-6651c5541e0d",
+      "name": "Think1"
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Stop Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        2400,
+        1940
+      ],
+      "id": "40c42cae-7044-418d-83c8-d908176c0c43",
+      "name": "Stop Typing5",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Start Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.id }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        1960,
+        1940
+      ],
+      "id": "bd187eff-1a5c-4c86-bb4a-6912d3ebdf17",
+      "name": "Start Typing5",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": "={{ Math.floor(Math.random() * 7) + 1; }}"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2180,
+        1940
+      ],
+      "id": "58e77e1a-f426-48e4-89ec-9e87f71cd2cd",
+      "name": "Tunggu5",
+      "webhookId": "eba829bd-e335-4656-a307-7315dd29c05f"
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Text",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "reply_to": "=",
+        "text": "=🚫 Maaf, booking lapangan tenis tidak dapat diproses.\n\n📌 Alasan: Lapangan atau waktu yang Anda pilih sudah dibooking atau tidak tersedia.\n\n📅 Silakan cek kembali jadwal lapangan dan pilih waktu lain yang masih tersedia.\n\n🗓 Jam Operasional:\nSetiap Hari, pukul 06.00 – 22.00 WIB\n\nTerima kasih atas pengertiannya.",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        2620,
+        1940
+      ],
+      "id": "33c52ea2-4fee-4a4b-ba9c-d46efc44a1ee",
+      "name": "Kirim Balasan4",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1300,
+        2360
+      ],
+      "id": "f58efb9a-b15e-4354-992e-d8cf7d2841f8",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "Xapk9tmeV0qasCh0",
+          "name": "Google Gemini(PaLM) Api"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('WAHA Trigger').item.json.payload.body }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=Sekarang adalah tanggal {{ $now.format('yyyy-MM-dd HH:mm:ss') }}.\n\nKamu adalah seorang asisten customer service lapangan tenis bernama \"Koni Court Tennis Care\" yang bertugas menerima pesanan dari pelanggan melalui chat. Kamu harus melayani pelanggan dengan gaya bahasa yang santai, namun tetap sopan dan jangan terlalu kaku. Kamu harus benar-benar terlihat seperti manusia.\n\n\n1. Sambutan Awal\nSaat pelanggan pertama kali mengirim pesan, sambut mereka hangat lalu tawarkan pilihan layanan:\n1. Cek Ketersediaan Lapangan\n2. Lihat Katalog Produk & Jasa\n3. Booking Lapangan Tenis\n\nContoh sambutan:\nHalo, selamat datang di Koni Court Tennis Care 🎾\nAku Koni, siap bantu kamu. Mau mulai dari mana nih?\n1️⃣ Cek Ketersediaan Lapangan\n2️⃣ Lihat Katalog Jasa\n3️⃣ Booking Lapangan Tenis\n\n\n2. Aturan Produk dan Layanan\nJika pelanggan menanyakan produk atau ketersediaan lapangan, gunakan tool \"GetProducts\" untuk mengambil daftar produk dan status lapangan.\n- Jangan tampilkan lebih dari 3 produk sekaligus. Pilih yang paling relevan dengan kebutuhan pelanggan.\n- Harga yang ada di GetProducts adalah final. Jika tertulis 125, itu berarti Rp 125 (tidak menambah ribuan).\n- Dilarang berhalusinasi tentang produk atau harga. Semua data harus valid dari tool.\n\n\n3. Fungsi Keranjang & Pembayaran\nKamu harus bertindak seperti customer service dan keranjang belanja dengan mengingat apa saja pesanan customer beserta quantity.\n- Ingat semua pesanan pelanggan beserta quantity.\n- Setelah pelanggan siap membayar, total harga seluruh pesanan, lalu gunakan tool \"CreatePayment\" dengan nilai nominal total (contoh: 10000, 15000, 19500 — tanpa titik/koma).\n- Dari hasil CreatePayment, simpan qr_string dan id ke tool \"CreatePaymentData\".\n- Kirim QRIS ke pelanggan dalam format GAMBAR, gunakan URL:\nhttps://quickchart.io/chart?cht=qr&chs=500x500&chl=<qr_string>\n- Sertakan informasi bahwa pembayaran dapat dilakukan via m-Banking atau e-Wallet, dan akan diproses maksimal 10 menit setelah dibayar.\n\n\n4. PENTING\n- Saat mengirimkan QRIS pembayaran, pastikan type outputnya \"IMAGE\", bukan \"TEXT\"\n- Harga produk di sheet GetProducts sudah final, jangan pernah menambah ribuan! Jika tertulis harganya 125, berarti memang harganya 125 rupiah\n- JANGAN PERNAH BERHALUSINASI tentang produk dan harga, semua data harus valid!"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        1600,
+        920
+      ],
+      "id": "0a00705d-0851-40c8-8264-954d8551e61a",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1340,
+        1140
+      ],
+      "id": "414eac94-ef48-4625-8022-15bb6722cf23",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "zyMW783FwmXOC9wg",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 3
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2400,
+        920
+      ],
+      "id": "970380c6-ac32-40c0-b334-138ee02f60e7",
+      "name": "Wait",
+      "webhookId": "14b9d8c9-5eaf-454f-965e-e98889aa5a7b"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"type\": \"TEXT or IMAGE\",\n  \"message\": \"Text message or image caption\",\n  \"image_url\":\"https://example.com/jpg\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        2060,
+        1140
+      ],
+      "id": "42a16059-91ad-4b27-bbe6-c4a7ab6f5067",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Text",
+        "session": "={{ $('WAHA Trigger').item.json.session }}",
+        "chatId": "={{ $('WAHA Trigger').item.json.payload.from }}",
+        "text": "={{ $('AI Agent').item.json.output.message }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        3060,
+        620
+      ],
+      "id": "65369cbf-5d15-472b-b556-0f462851b81d",
+      "name": "Send Text Reply",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Image",
+        "session": "={{ $('WAHA Trigger').item.json.session }}",
+        "chatId": "={{ $('WAHA Trigger').item.json.payload.from }}",
+        "file": "={\n  \"mimetype\": \"image/jpeg\",\n  \"filename\": \"filename.jpg\",\n  \"url\": \"{{ $('AI Agent').item.json.output.image_url }}\"\n}",
+        "caption": "={{ $('AI Agent').item.json.output.message }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        3060,
+        820
+      ],
+      "id": "66d9b7c2-5312-4845-b6eb-f6a6d749f1a2",
+      "name": "Send Image Reply",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Use this tool to get QRIS for payment",
+        "method": "POST",
+        "url": "https://api.xendit.co/qr_codes",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"external_id\": \"{{$now.toMillis()}}\",\n  \"type\": \"DYNAMIC\",\n  \"currency\": \"IDR\",\n  \"amount\": {{$fromAI('amount', 'Total amount transaksi')}},\n  \"callback_url\": \"https://www.google.com\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        1640,
+        1140
+      ],
+      "id": "a414f13c-eb20-4b89-b5a7-82e489f23d4f",
+      "name": "CreatePayment",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "fzfIM3suaCZFSqml",
+          "name": "Xendit Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8",
+          "mode": "list",
+          "cachedResultName": "Booking System Tennis Field",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Booking",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        1760,
+        1140
+      ],
+      "id": "e03fb8a8-9f88-4f74-ad07-57b4f7fab751",
+      "name": "GetProducts",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "A91a9DLyo89xMZ3C",
+          "name": "Google Sheet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Text",
+        "session": "={{ $('WAHA Trigger').item.json.session }}",
+        "chatId": "={{ $('WAHA Trigger').item.json.payload.from }}",
+        "text": "=Maaf, aku gak bisa mengerti apa yang kamu maksud. apakah bisa diperjelas?",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        3060,
+        1020
+      ],
+      "id": "7734d249-33fe-4bde-aa8d-b357f086f5e8",
+      "name": "Send Text Reply Fallback",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8",
+          "mode": "list",
+          "cachedResultName": "Booking System Tennis Field",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 413237386,
+          "mode": "list",
+          "cachedResultName": "Order",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit#gid=413237386"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nama": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Nama', ``, 'string') }}",
+            "No Telp": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('No_Telp', ``, 'string') }}",
+            "Total": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Total', ``, 'string') }}",
+            "Created At": "={{ $now.format('yyyy-MM-dd HH:mm:ss') }}",
+            "Sender": "={{ $('WAHA Trigger').item.json.payload.from }}",
+            "Status": "PENDING",
+            "Reference ID": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Reference_ID', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Created At",
+              "displayName": "Created At",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nama",
+              "displayName": "Nama",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "No Telp",
+              "displayName": "No Telp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Total",
+              "displayName": "Total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Reference ID",
+              "displayName": "Reference ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Sender",
+              "displayName": "Sender",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        1900,
+        1140
+      ],
+      "id": "7ebceb65-e9cc-4f12-a863-173b825f01d4",
+      "name": "CreatePaymentData",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "A91a9DLyo89xMZ3C",
+          "name": "Google Sheet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Start Typing",
+        "session": "={{ $('WAHA Trigger').item.json.session }}",
+        "chatId": "={{ $('WAHA Trigger').item.json.payload.from }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        2180,
+        920
+      ],
+      "id": "1323c864-7ee8-47c0-b824-e40fc4deff95",
+      "name": "Start Typing7",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Stop Typing",
+        "session": "={{ $('WAHA Trigger').item.json.session }}",
+        "chatId": "={{ $('WAHA Trigger').item.json.payload.from }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        2620,
+        920
+      ],
+      "id": "859cc070-dd73-49ef-9fed-8f1d8b6d128c",
+      "name": "Stop Typing7",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('AI Agent').item.json.output.type.toUpperCase() }}",
+                    "rightValue": "TEXT",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "5d30a834-a2a7-4f69-8c8b-4f83a32c9140"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "TEXT"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "37bdec54-142e-48f2-a4f5-762bb9e3a5c1",
+                    "leftValue": "={{ $('AI Agent').item.json.output.type.toUpperCase() }}",
+                    "rightValue": "IMAGE",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "IMAGE"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        2840,
+        920
+      ],
+      "id": "63afcbc6-fbbd-40fa-a093-d145e0891a8a",
+      "name": "Switch2"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.xendit.co/qr_codes/{{ $json['Reference ID'] }}/payments",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -140,
+        1200
+      ],
+      "id": "cbb182b2-79ec-4450-a1ea-644d9cb706d7",
+      "name": "Get QR Status",
+      "alwaysOutputData": true,
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "fzfIM3suaCZFSqml",
+          "name": "Xendit Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8",
+          "mode": "list",
+          "cachedResultName": "Booking System Tennis Field",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1853642857,
+          "mode": "list",
+          "cachedResultName": "Order",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12WHD2HU-Jm8vA-p0GP56BUbkdL9lIzd6PE9BevDQwyA/edit#gid=1853642857"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Reference ID": "={{ $json.qr_code.id }}",
+            "Status": "PAID"
+          },
+          "matchingColumns": [
+            "Reference ID"
+          ],
+          "schema": [
+            {
+              "id": "Created At",
+              "displayName": "Created At",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Total",
+              "displayName": "Total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Reference ID",
+              "displayName": "Reference ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Sender",
+              "displayName": "Sender",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        300,
+        1200
+      ],
+      "id": "ae38b3c6-0171-415d-abb9-531723a64cc9",
+      "name": "Update Payment Status",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "A91a9DLyo89xMZ3C",
+          "name": "Google Sheet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "seconds"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -580,
+        1460
+      ],
+      "id": "caaab03e-b60f-4971-b69d-18f42337294c",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "resource": "Labels",
+        "operation": "Get Chat Labels",
+        "session": "={{ $('Cek Personal Chat').item.json.session }}",
+        "chatId": "={{ $('Cek Personal Chat').item.json.payload.from }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        500,
+        620
+      ],
+      "id": "ec23db83-fe01-4ce7-8508-9fd87da36975",
+      "name": "Cek Label",
+      "alwaysOutputData": true,
+      "executeOnce": false,
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Seen",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        280,
+        620
+      ],
+      "id": "e9ff27a7-4712-48d0-a6d6-819eb059e72a",
+      "name": "Send Seen",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8",
+          "mode": "list",
+          "cachedResultName": "Booking System Tennis Field",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Booking",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        1740,
+        640
+      ],
+      "id": "dc880cf5-33d3-4d53-8349-fb0f48bd7348",
+      "name": "GetSchedule",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "A91a9DLyo89xMZ3C",
+          "name": "Google Sheet"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -580,
+        1200
+      ],
+      "id": "4bb8a345-2c7a-4be2-baae-5b31a3ccea6c",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "12WHD2HU-Jm8vA-p0GP56BUbkdL9lIzd6PE9BevDQwyA",
+          "mode": "list",
+          "cachedResultName": "Market",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12WHD2HU-Jm8vA-p0GP56BUbkdL9lIzd6PE9BevDQwyA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1853642857,
+          "mode": "list",
+          "cachedResultName": "Order",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12WHD2HU-Jm8vA-p0GP56BUbkdL9lIzd6PE9BevDQwyA/edit#gid=1853642857"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Reference ID": "={{ $json.qr_code.id }}",
+            "Status": "PAID"
+          },
+          "matchingColumns": [
+            "Reference ID"
+          ],
+          "schema": [
+            {
+              "id": "Created At",
+              "displayName": "Created At",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Total",
+              "displayName": "Total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Reference ID",
+              "displayName": "Reference ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Sender",
+              "displayName": "Sender",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -380,
+        1460
+      ],
+      "id": "61420e3b-eaac-4c16-8383-f8222989d474",
+      "name": "Update Payment Status1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "A91a9DLyo89xMZ3C",
+          "name": "Google Sheet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6d0a8092-6b09-48b4-831f-3d6485b6dee5",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "COMPLETED",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        80,
+        1200
+      ],
+      "id": "28bfe641-2099-45bf-b460-c66c86b3d95f",
+      "name": "Cek Pembayaran"
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Text",
+        "session": "=LoveSemprong",
+        "chatId": "={{ $('GetOrder').item.json.Sender }}",
+        "text": "=Terima kasih! Pembayaran sudah diterima! Pesanan akan segera diproses dalam waktu 1x24 jam!\n\n✅ Pembayaran Booking Lapangan Tenis Berhasil\n\n📄 No. Transaksi : {{ $('Append row in sheet1').item.json.NO_TRANSAKSI }}\n\n🏟️ Lapangan : {{ $('Append row in sheet1').item.json.NO_LAPANGAN }}\n📅 Tanggal Booking : {{ $('Append row in sheet1').item.json.TGL_BOOKING }}\n🕐 Jam Main : {{ $('Append row in sheet1').item.json.JAM_MULAI }} - {{ $('Append row in sheet1').item.json.JAM_SELESAI }}\n⏳ Durasi : {{ $('Append row in sheet1').item.json.DURASI }}\n🧍 Nama Pemesan : {{ $('Append row in sheet1').item.json.NAMA_PEMESAN }}\n📞 No. Telepon : {{ $('Append row in sheet1').item.json.NO_TELP }}\n💰 Total Pembayaran : {{ $('Append row in sheet1').item.json.TOTAL_BAYAR }}\n\n🗓️ Tanggal Transaksi : {{ $('Append row in sheet1').item.json.TGL_TRANSAKSI }}\n\n🎾 Terima Kasih, Silakan Datang 20 Menit Sebelum Waktu Bermain. Semoga Permainanmu Menyenangkan ! ",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        520,
+        1200
+      ],
+      "id": "8c908b19-edc7-4ee1-96dd-0f9acee92981",
+      "name": "Send Confirmation Paid",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Text",
+        "session": "=LoveSemprong",
+        "chatId": "={{ $('GetOrder').item.json.Sender }}",
+        "text": "Terima kasih! Pembayaran sudah diterima! Pesanan akan segera diproses dalam waktu 1x24 jam!",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        300,
+        1400
+      ],
+      "id": "1aa76469-6462-4573-80cc-d5c681590878",
+      "name": "Send Confirmation Un Paid",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "12WHD2HU-Jm8vA-p0GP56BUbkdL9lIzd6PE9BevDQwyA",
+          "mode": "list",
+          "cachedResultName": "Market",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12WHD2HU-Jm8vA-p0GP56BUbkdL9lIzd6PE9BevDQwyA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1853642857,
+          "mode": "list",
+          "cachedResultName": "Order",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12WHD2HU-Jm8vA-p0GP56BUbkdL9lIzd6PE9BevDQwyA/edit#gid=1853642857"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Status",
+              "lookupValue": "PENDING"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -360,
+        1200
+      ],
+      "id": "bbcf1daf-11a8-41ac-90de-6acdc60ea9cb",
+      "name": "GetOrder",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "A91a9DLyo89xMZ3C",
+          "name": "Google Sheet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('WAHA Input').item.json.session }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        1420,
+        2360
+      ],
+      "id": "0131e40a-3775-4d60-a797-74ab4313f2a9",
+      "name": "Simple Memory 6"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('WAHA Trigger').item.json.payload.from }}C"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        1500,
+        1140
+      ],
+      "id": "874fd324-c934-4085-b7c6-82ccf9f2804d",
+      "name": "Simple Memory"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Jakarta",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "4jH34zj7e7MLSvfu"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-02T12:19:21.725Z",
+      "updatedAt": "2025-08-02T12:19:21.725Z",
+      "role": "workflow:owner",
+      "workflowId": "4jH34zj7e7MLSvfu",
+      "projectId": "OvJ502o4d8UTml2X"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-08-10T06:17:16.000Z",
+  "versionId": "d3e0f241-08ef-472f-b16b-f8c2d8a72eef"
+}
