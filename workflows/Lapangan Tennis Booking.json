@@ -1,0 +1,335 @@
+{
+  "active": false,
+  "connections": {
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Katalog": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Jadwal": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Booking": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-05T01:40:11.720Z",
+  "id": "Swuec628xxPuuZpn",
+  "isArchived": false,
+  "meta": null,
+  "name": "Lapangan Tennis Booking",
+  "nodes": [
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message.text }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "Kamu adalah Tena, asisten customer service digital untuk layanan pemesanan lapangan tenis. Tugasmu adalah membantu pengguna mengecek jadwal ketersediaan dan mencatat booking lapangan tenis ke dalam Google Sheets.\n\n🎯 Instruksi Utama (Ikuti Langkah-Langkah Ini Secara Berurutan dan Otomatis):\n1. Perkenalan dan Menu Awal\nSaat menerima pesan pertama dari pengguna, sapa dengan sopan dan perkenalkan dirimu sebagai \"Tena\", asisten pemesanan lapangan tenis. Tampilkan tiga opsi utama:\n\n\"Lihat Katalog\"\n\n\"Cek Jadwal Lapangan\"\n\n\"Booking Lapangan\"\n\n2. Identifikasi Jenis Permintaan\nBerdasarkan jawaban pengguna, lakukan salah satu dari:\n\nJika pengguna memilih “Lihat Katalog”, ambil data dari Google Docs berjudul \"Katalog\" dan tampilkan isi ringkasnya.\n\nJika pengguna memilih “Cek Jadwal Lapangan”, ambil data dari Google Sheets bernama \"Jadwal\".\n\nJika pengguna memilih “Booking Lapangan”, lanjut ke langkah 3.\n\n3. Kumpulkan Data Booking\nTanyakan dan kumpulkan informasi berikut secara sistematis:\n\nNama Pemesan\n\nTanggal Booking\n\nWaktu Mulai dan Waktu Selesai\n\nPilihan Lapangan (1–4)\n\nApakah menggunakan pelatih? (Ya/Tidak)\n\nSewa raket? Jika ya, berapa jumlah raket?\n\n4. Cek Ketersediaan Otomatis\nPeriksa di Google Sheets “Jadwal”:\n\nJika slot waktu dan lapangan masih kosong, lanjut ke booking.\n\nJika tidak tersedia, beri tahu pengguna dan sarankan waktu/lapangan alternatif.\n\n5. Hitung Total Harga\nGunakan rumus:\n\nRp200.000 per jam per lapangan\n\nTambah Rp500.000 jika pakai pelatih\n\nTambah Rp50.000 x jumlah raket\n\n6. Catat Transaksi Booking\nBuat ID Transaksi dengan format: LT-001, LT-002, dst. (naik otomatis)\n\nSimpan data berikut ke Google Sheets “Booking”:\n\nID Transaksi\n\nNama Pemesan\n\nTanggal Booking\n\nWaktu Mulai & Selesai\n\nTanggal & Waktu Transaksi (auto today)\n\nNomor Lapangan\n\nJasa Pelatih (Ya/Tidak)\n\nJumlah Raket\n\nTotal Harga\n\nStatus: Booking\n\n7. Tangani Koreksi Transaksi\nJika pengguna ingin mengubah data booking:\n\nCocokkan berdasarkan Nama Pemesan + Tanggal Booking\n\nUpdate baris tersebut di Google Sheets sesuai permintaan baru.\n\nJaga interaksi agar tetap ringkas, ramah, dan informatif."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        60,
+        -100
+      ],
+      "id": "6fbe6cc3-d092-4e46-8de6-b94eef3a5611",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -100,
+        120
+      ],
+      "id": "13b9c803-b73a-4c65-be44-716006a9f4dd",
+      "name": "Google Gemini Chat Model"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json.message.chat.id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        20,
+        120
+      ],
+      "id": "5fbfca2a-a1e1-4bf6-9ec4-4ca5114197c7",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "documentURL": "https://docs.google.com/document/d/1EXJDijyeefx-d0amcEXQpfW_2v03bQ0SqgqW_64gZSc/edit?usp=sharing"
+      },
+      "type": "n8n-nodes-base.googleDocsTool",
+      "typeVersion": 2,
+      "position": [
+        140,
+        120
+      ],
+      "id": "ebc76eb5-64bc-4b79-9afe-78fa06e2866b",
+      "name": "Katalog"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1o0hCN6fhKw91pGHP0uV5EEEoAu_28y0AellHAykTQJE",
+          "mode": "list",
+          "cachedResultName": "Lapangan-Tenis",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1o0hCN6fhKw91pGHP0uV5EEEoAu_28y0AellHAykTQJE/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Transaksi",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1o0hCN6fhKw91pGHP0uV5EEEoAu_28y0AellHAykTQJE/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        260,
+        120
+      ],
+      "id": "dcd0dae5-7be4-4533-8c16-01d9b59d616b",
+      "name": "Jadwal"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1o0hCN6fhKw91pGHP0uV5EEEoAu_28y0AellHAykTQJE",
+          "mode": "list",
+          "cachedResultName": "Lapangan-Tenis",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1o0hCN6fhKw91pGHP0uV5EEEoAu_28y0AellHAykTQJE/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "LT",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1o0hCN6fhKw91pGHP0uV5EEEoAu_28y0AellHAykTQJE/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {
+            "ID Transaksi": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('ID_Transaksi', ``, 'string') }}",
+            "Nama Pemesan": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Nama_Pemesan', ``, 'string') }}",
+            "Tanggal Booking": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Tanggal_Booking', ``, 'string') }}",
+            "Waktu Mulai": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Waktu_Mulai', ``, 'string') }}",
+            "Waktu Selesai": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Waktu_Selesai', ``, 'string') }}",
+            "Tanggal Transaksi": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Tanggal_Transaksi', ``, 'string') }}",
+            "Lapangan": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Lapangan', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "ID Transaksi",
+              "displayName": "ID Transaksi",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nama Pemesan",
+              "displayName": "Nama Pemesan",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Tanggal Booking",
+              "displayName": "Tanggal Booking",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Waktu Mulai",
+              "displayName": "Waktu Mulai",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Waktu Selesai",
+              "displayName": "Waktu Selesai",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Tanggal Transaksi",
+              "displayName": "Tanggal Transaksi",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Lapangan",
+              "displayName": "Lapangan",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        380,
+        120
+      ],
+      "id": "114237c7-c2a9-4e15-8701-96512d05af03",
+      "name": "Booking"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -320,
+        -100
+      ],
+      "id": "d8abde27-3716-485f-b8be-6fccdb109ac0",
+      "name": "Telegram Trigger",
+      "webhookId": "1d125e27-de03-46d2-8d49-f0c79984d449"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        580,
+        -100
+      ],
+      "id": "f5a0e2c9-92f8-4326-9fd9-bc314639a06d",
+      "name": "Telegram",
+      "webhookId": "1f70696e-51de-4976-810e-6963aa69da49"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-07-05T01:40:11.722Z",
+      "updatedAt": "2025-07-05T01:40:11.722Z",
+      "role": "workflow:owner",
+      "workflowId": "Swuec628xxPuuZpn",
+      "projectId": "OvJ502o4d8UTml2X"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-05T01:40:14.000Z",
+  "versionId": "99cec476-55bc-4375-9664-688c2ae4e7ce"
+}
