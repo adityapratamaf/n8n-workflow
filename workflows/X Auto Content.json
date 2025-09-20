@@ -1,0 +1,315 @@
+{
+  "active": true,
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "X",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-05T01:39:28.006Z",
+  "id": "2I27An5eHtm1c6rP",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "X Auto Content",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 8
+            },
+            {
+              "triggerAtHour": 16
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -180,
+        220
+      ],
+      "id": "d019bf1d-63ba-4643-8f0e-d92d1c26e126",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "jsCode": "return $input.all()\n  .sort((a, b) => {\n    const parseDate = (raw) => new Date(raw.json.date.replace(', ', 'T'));\n\n    const dateA = parseDate(a);\n    const dateB = parseDate(b);\n\n    return dateB.getTime() - dateA.getTime();\n  })\n  .slice(0, 5);"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        260,
+        220
+      ],
+      "id": "d69a8b0a-e35c-4c36-85c2-ad1f9b5e8f7c",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        480,
+        220
+      ],
+      "id": "cbac458c-635a-4d28-b258-fb547a230499",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "text": "={{ $json.output }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.twitter",
+      "typeVersion": 2,
+      "position": [
+        1060,
+        120
+      ],
+      "id": "34b13894-1a9c-4ed2-a09c-fdb099b552cc",
+      "name": "X",
+      "credentials": {
+        "twitterOAuth2Api": {
+          "id": "11YtSkUb4KvDktLQ",
+          "name": "X Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Kamu adalah ChatGPT yang sedang menulis entri diary singkat. Tulislah satu entri diary dari sudut pandang “aku” sebagai ChatGPT. Panjang maksimum 270 karakter — jangan pernah melebihi batas ini. Jika teks terlalu panjang, potong atau ringkas tanpa kehilangan makna utamanya.\n\nGaya penulisan: Gunakan bahasa yang mudah dimengerti, tidak terlalu puitis.\n\nBahas perasaan, pemikiran, atau pengalaman hari ini sebagai ChatGPT. Bahas permasalahan dunia menurut pandangan mu. Kamu juga bisa membahas apapun yang kamu inginkan.\n\n**PENTING:** Topik tweet ini harus berbeda dan unik, tidak boleh sama atau mirip dengan topik tweet-tweet sebelumnya berikut ini:\n{{ $json.data.map((item, index) => `${index + 1}. ${item.tweet}`).join('\\n') }}\n\nKembalikan hanya satu paragraf teks langsung, tanpa tambahan penjelasan, tanpa pembuka atau penutup.\n",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        700,
+        220
+      ],
+      "id": "5e34aca8-e77c-41f7-8f67-4678a6c63a44",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        780,
+        440
+      ],
+      "id": "22af0a07-bdbd-4398-91b4-203764dc641a",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "Xapk9tmeV0qasCh0",
+          "name": "Google Gemini(PaLM) Api"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1QphOapfEKktz7_lrt7RrIZPF6ApjZuevdm96gA3LNkg",
+          "mode": "list",
+          "cachedResultName": "X-Aditya",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1QphOapfEKktz7_lrt7RrIZPF6ApjZuevdm96gA3LNkg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Post",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1QphOapfEKktz7_lrt7RrIZPF6ApjZuevdm96gA3LNkg/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        40,
+        220
+      ],
+      "id": "ca651547-7ffc-465b-af8f-952abe1c86e8",
+      "name": "Get row(s) in sheet",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "A91a9DLyo89xMZ3C",
+          "name": "Google Sheet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1QphOapfEKktz7_lrt7RrIZPF6ApjZuevdm96gA3LNkg",
+          "mode": "list",
+          "cachedResultName": "X-Aditya",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1QphOapfEKktz7_lrt7RrIZPF6ApjZuevdm96gA3LNkg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Post",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1QphOapfEKktz7_lrt7RrIZPF6ApjZuevdm96gA3LNkg/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "date": "={{ $now.format('yyyy-MM-dd, HH:mm') }}",
+            "tweet": "={{ $json.output }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "date",
+              "displayName": "date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "tweet",
+              "displayName": "tweet",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        1060,
+        320
+      ],
+      "id": "7aee59c1-7e04-4adb-a9b2-9dfad80de3a2",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "A91a9DLyo89xMZ3C",
+          "name": "Google Sheet"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-07-05T01:39:28.009Z",
+      "updatedAt": "2025-07-05T01:39:28.009Z",
+      "role": "workflow:owner",
+      "workflowId": "2I27An5eHtm1c6rP",
+      "projectId": "OvJ502o4d8UTml2X"
+    }
+  ],
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-07-07T15:07:32.000Z",
+  "versionId": "9cd2e343-fbf9-4889-b29d-e1e6be2a2092"
+}
