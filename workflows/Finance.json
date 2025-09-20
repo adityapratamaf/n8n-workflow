@@ -1,0 +1,466 @@
+{
+  "active": false,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Parse Pesan",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Laporan": {
+      "main": [
+        [
+          {
+            "node": "Kirim Laporan",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Data - Output": {
+      "main": [
+        [
+          {
+            "node": "Format Laporan",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Pesan": {
+      "main": [
+        [
+          {
+            "node": "Tambah Pengeluaran",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Data Input - Pemasukan": {
+      "main": [
+        [
+          {
+            "node": "Konfirmasi Input Pemasukan",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Data Input - Pengeluaran": {
+      "main": [
+        [
+          {
+            "node": "Konfirmasi Input Pengeluaran",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tambah Pengeluaran": {
+      "main": [
+        [
+          {
+            "node": "Data Input - Pengeluaran",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tambah Pemasukan",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tambah Pemasukan": {
+      "main": [
+        [
+          {
+            "node": "Data Input - Pemasukan",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Data - Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-05T01:44:01.568Z",
+  "id": "4ZWVtEZB2bNxhZJm",
+  "isArchived": false,
+  "meta": null,
+  "name": "Finance",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "id": "01b4612d-165e-4f82-8a2f-c53a8b223574",
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1,
+      "position": [
+        -940,
+        300
+      ],
+      "webhookId": "4c5ed033-3633-4642-b266-47edb734daae"
+    },
+    {
+      "parameters": {
+        "functionCode": "const rows = items;\nlet total = 0;\nlet isi = '';\n\n// Fungsi untuk normalisasi tanggal ke format DD/MM/YYYY\nfunction formatTanggal(tgl) {\n  if (!tgl) return 'Tidak Ada Data';\n\n  if (tgl.includes('/')) {\n    // Sudah format DD/MM/YYYY\n    return tgl;\n  }\n\n  if (tgl.includes('-')) {\n    // Format: YYYY-MM-DD ➜ DD/MM/YYYY\n    const [yyyy, mm, dd] = tgl.split('-');\n    return `${dd.padStart(2, '0')}/${mm.padStart(2, '0')}/${yyyy}`;\n  }\n\n  return 'Format Tidak Dikenal';\n}\n\n// Untuk menyimpan tanggal unik yang dinormalisasi (kalau perlu grouping)\nconst semuaTanggal = new Set();\n\nfor (const row of rows) {\n  const ket = row.json?.Keterangan ?? 'Tanpa keterangan';\n  const jumlahStr = row.json?.Jumlah ?? '0';\n  const jumlah = parseInt(jumlahStr.toString().replace(/[^\\d]/g, '')) || 0;\n\n  const tgl = formatTanggal(row.json?.Tanggal ?? '');\n  semuaTanggal.add(tgl);\n\n  isi += `- ${ket} : Rp ${jumlah.toLocaleString('id-ID')}\\n`;\n  total += jumlah;\n}\n\n// Ambil tanggal pertama dari kumpulan tanggal (jika yakin hanya 1)\nconst tanggal = [...semuaTanggal][0] ?? 'Tidak Ada Tanggal';\n\n// Ambil chat_id dari node sebelumnya (pastikan namanya benar)\nconst chat_id = $node[\"Parse Pesan\"].json.chat_id ?? '';\n\nconst hasil = `📅 Laporan Tanggal ${tanggal}\\n\\n${isi}\\n🧾 Total : Rp ${total.toLocaleString('id-ID')}`;\n\nreturn [{\n  json: {\n    chat_id,\n    text: hasil\n  }\n}];"
+      },
+      "id": "b2842176-707c-4ca2-ae21-9c8892810b15",
+      "name": "Format Laporan",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        220,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "12KHAHwZPQh-2KrbgX7Bz8izA0PnrPTqziq0I_yQtwOg",
+          "mode": "list",
+          "cachedResultName": "FinanceDailyOperation",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12KHAHwZPQh-2KrbgX7Bz8izA0PnrPTqziq0I_yQtwOg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Pengeluaran",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12KHAHwZPQh-2KrbgX7Bz8izA0PnrPTqziq0I_yQtwOg/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "tanggal",
+              "lookupValue": "={{ $('Parse Pesan').item.json.tanggal }}"
+            },
+            {
+              "lookupColumn": "tanggal",
+              "lookupValue": "={{ $('Tambah Pengeluaran').item.json.tanggal }}"
+            },
+            {
+              "lookupColumn": "chat_id",
+              "lookupValue": "={{ $('Tambah Pengeluaran').item.json.chat_id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        40,
+        300
+      ],
+      "id": "c1397ff3-626a-439f-b001-9706636d12ca",
+      "name": "Data - Output"
+    },
+    {
+      "parameters": {
+        "chatId": "={{$node[\"Parse Pesan\"].json[\"chat_id\"]}}",
+        "text": "={{$json[\"text\"]}}",
+        "additionalFields": {}
+      },
+      "id": "cb2d7a50-1981-4219-a9e7-4379c4c2da68",
+      "name": "Kirim Laporan",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        400,
+        300
+      ],
+      "webhookId": "bf25dff2-68df-4a76-b50a-5a22235b1ae5"
+    },
+    {
+      "parameters": {
+        "functionCode": "const message = $json.message;\n\nif (!message || !message.text || !message.chat || !message.chat.id) {\n  return [{\n    json: { error: 'Pesan Tidak Valid' }\n  }];\n}\n\nconst text = message.text.trim().toLowerCase();\nconst chat_id = message.chat.id;\nconst today = new Date().toISOString().split('T')[0];\n\n// Regex untuk laporan tetap sama\nconst laporanRegex = /laporan(?:\\s+(\\d{4}-\\d{2}-\\d{2}))?/;\nconst laporanMatch = text.match(laporanRegex);\n\nif (laporanMatch) {\n  const tanggal = laporanMatch[1] || today;\n  return [{\n    json: {\n      mode: 'laporan',\n      tanggal,\n      chat_id,\n    }\n  }];\n}\n\n// Cek pemasukan\nif (text.startsWith('pemasukan')) {\n  const parts = text.split(' ');\n  // Format: pemasukan [tanggal opsional] jumlah keterangan\n  let tanggal = today;\n  let keterangan = '';\n  let jumlah = 0;\n\n  if (parts.length >= 3 && /^\\d{4}-\\d{2}-\\d{2}$/.test(parts[1])) {\n    // ada tanggal spesifik\n    tanggal = parts[1];\n    keterangan = parts.slice(3).join(' ');\n    jumlah = parts[2];\n  } else {\n    keterangan = parts.slice(2).join(' ');\n    jumlah = parts[1];\n  }\n\n  return [{\n    json: {\n      mode: 'tambah_pemasukan',\n      tanggal,\n      keterangan,\n      jumlah,\n      chat_id,\n    }\n  }];\n}\n\n// Cek pengeluaran sama seperti sebelumnya\nif (text.startsWith('pengeluaran')) {\n  const parts = text.split(' ');\n  let tanggal = today;\n  let keterangan = '';\n  let jumlah = 0;\n\n\n  if (parts.length >= 3 && /^\\d{4}-\\d{2}-\\d{2}$/.test(parts[1])) {\n    tanggal = parts[1];\n    keterangan = parts.slice(3).join(' ');\n    jumlah = parts[2];\n  } else {\n    keterangan = parts.slice(2).join(' ');\n    jumlah = parts[1];\n  }\n\n  return [{\n    json: {\n      mode: 'tambah_pengeluaran',\n      tanggal,\n      keterangan,\n      jumlah,\n      chat_id,\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    error: 'Perintah Tidak Ada'\n  }\n}];\n"
+      },
+      "id": "51710fe3-5f0e-4ec3-a6e8-9c6d1286de71",
+      "name": "Parse Pesan",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        -760,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "12KHAHwZPQh-2KrbgX7Bz8izA0PnrPTqziq0I_yQtwOg",
+          "mode": "list",
+          "cachedResultName": "FinanceDailyOperation",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12KHAHwZPQh-2KrbgX7Bz8izA0PnrPTqziq0I_yQtwOg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 102352900,
+          "mode": "list",
+          "cachedResultName": "Pemasukan",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12KHAHwZPQh-2KrbgX7Bz8izA0PnrPTqziq0I_yQtwOg/edit#gid=102352900"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Tanggal": "={{ $json.tanggal }}",
+            "Jumlah": "={{ $json.keterangan }}",
+            "Keterangan": "={{ $json.jumlah }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Tanggal",
+              "displayName": "Tanggal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Keterangan",
+              "displayName": "Keterangan",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Jumlah",
+              "displayName": "Jumlah",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        40,
+        120
+      ],
+      "id": "82397414-8647-4290-af83-fb8324f992b0",
+      "name": "Data Input - Pemasukan"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "12KHAHwZPQh-2KrbgX7Bz8izA0PnrPTqziq0I_yQtwOg",
+          "mode": "list",
+          "cachedResultName": "FinanceDailyOperation",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12KHAHwZPQh-2KrbgX7Bz8izA0PnrPTqziq0I_yQtwOg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Pengeluaran",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12KHAHwZPQh-2KrbgX7Bz8izA0PnrPTqziq0I_yQtwOg/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "mode": "={{ $json.mode }}",
+            "tanggal": "={{ $json.tanggal }}",
+            "chat_id": "={{ $json.chat_id }}",
+            "jumlah": "={{ $json.jumlah }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "mode",
+              "displayName": "mode",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "tanggal",
+              "displayName": "tanggal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "keterangan",
+              "displayName": "keterangan",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "jumlah",
+              "displayName": "jumlah",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "chat_id",
+              "displayName": "chat_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -300,
+        -60
+      ],
+      "id": "942d464a-68fa-4f63-83f1-63a0285e71da",
+      "name": "Data Input - Pengeluaran"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json[\"mode\"]}}",
+              "value2": "tambah_pengeluaran"
+            }
+          ]
+        }
+      },
+      "id": "c1b234f7-b37b-4fd0-ba88-859c8779aac1",
+      "name": "Tambah Pengeluaran",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -580,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json[\"mode\"]}}",
+              "value2": "tambah_pemasukan"
+            }
+          ]
+        }
+      },
+      "id": "f5620ae2-55f7-496c-a7f1-92ab79531d8f",
+      "name": "Tambah Pemasukan",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -300,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Parse Pesan').item.json.chat_id }}",
+        "text": "✅ Pengeluaran Berhasil Di Tambahkan !",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -120,
+        -60
+      ],
+      "id": "b7b3be9a-8c37-4ecf-a3e3-9b8bfdef6549",
+      "name": "Konfirmasi Input Pengeluaran",
+      "webhookId": "4c1f21a1-67de-4c08-926e-cf2301a320db"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Parse Pesan').item.json.chat_id }}",
+        "text": "✅ Pemasukan Berhasil Di Tambahkan !",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        120
+      ],
+      "id": "366d6632-a93d-411e-b2ba-0a0357e1df3e",
+      "name": "Konfirmasi Input Pemasukan",
+      "webhookId": "4c1f21a1-67de-4c08-926e-cf2301a320db"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-07-05T01:44:01.571Z",
+      "updatedAt": "2025-07-05T01:44:01.571Z",
+      "role": "workflow:owner",
+      "workflowId": "4ZWVtEZB2bNxhZJm",
+      "projectId": "OvJ502o4d8UTml2X"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-05T01:44:05.000Z",
+  "versionId": "e6caea57-3a7d-4eb3-a3c5-b1c0b36ae918"
+}
