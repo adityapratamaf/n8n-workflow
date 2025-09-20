@@ -1,0 +1,223 @@
+{
+  "active": false,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-05T01:39:00.635Z",
+  "id": "JamjgEejgA8VXm3Z",
+  "isArchived": false,
+  "meta": null,
+  "name": "Finance Daily",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        420,
+        -80
+      ],
+      "id": "dfbc1da0-8312-49e6-8063-b9520d0719f9",
+      "name": "Telegram Trigger",
+      "webhookId": "32a586f4-8156-44fd-8e0b-c8b1cd2e76a9"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message.text }}",
+        "options": {
+          "systemMessage": "=kamu adalah asisten pencatat pengeluaran pemasukan yang handal dan juga teliti\n\ncatatan penting untuk menulsi dan mengatur pencatatan \n\n1. nomor transaksi : +1 nomor sebelumnya (contoh 1, 2, 3)\n2. tanggal : isi otomatis menggunakan data ini data tanggal hari ini {{ $now }} (contoh : 22 Juni 2025)\n3. jenis transaksi : isi otomatis sesuai dengan keterangan jenis (pengeluaran / pemasukan)\n4. kategori transaksi : isi otomatis sesuai keterangan kategori (misalnya, makanan, minuman, transportasi, gaji, dll)\n5. nominal : tulis dengan format currency (contoh 50.000)\n6. sisa saldo : isi otomatis dengan rumus \n7. pastikan tidak ada datang terduplikasi\n8. konfirmasi terlebih dahulu ke user sebelum input\n9. jangan mengubah data lama tanpa perintah\n10. chat id : {{ $json.message.chat.id }}\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        740,
+        -80
+      ],
+      "id": "b06f5b13-123b-4aa1-bb8a-5997128c12e4",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        640,
+        140
+      ],
+      "id": "2dc73d06-8a66-475e-b96e-2d9c9c55b852",
+      "name": "Groq Chat Model"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1200,
+        -80
+      ],
+      "id": "f3c7073f-368a-4880-8f13-090154264746",
+      "name": "Telegram",
+      "webhookId": "ddfc2dc8-716f-4dc6-a26b-7ace1280ae67"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Telegram Trigger').item.json.message.chat.id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        760,
+        140
+      ],
+      "id": "4670c14b-9f04-4f5a-9eae-5eb92a9fe259",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1WOdUqeMJfsWgOv2zoajgi_QvLw2stkSvLlADdjOe-Yw",
+          "mode": "list",
+          "cachedResultName": "Finance Daily Automation",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1WOdUqeMJfsWgOv2zoajgi_QvLw2stkSvLlADdjOe-Yw/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Finance",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1WOdUqeMJfsWgOv2zoajgi_QvLw2stkSvLlADdjOe-Yw/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        880,
+        140
+      ],
+      "id": "a3f2f10e-9a74-4829-85aa-8b4a751eafa6",
+      "name": "Google Sheets"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        }
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        1000,
+        140
+      ],
+      "id": "db2d1a17-aa98-4783-818a-f14ea40d5d0a",
+      "name": "Google Sheets1",
+      "disabled": true
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-07-05T01:39:00.638Z",
+      "updatedAt": "2025-07-05T01:39:00.638Z",
+      "role": "workflow:owner",
+      "workflowId": "JamjgEejgA8VXm3Z",
+      "projectId": "OvJ502o4d8UTml2X"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-05T01:39:00.635Z",
+  "versionId": "6dba65dc-fc64-4a22-8f9d-8048ab078336"
+}
