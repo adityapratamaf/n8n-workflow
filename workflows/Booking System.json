@@ -1,0 +1,2160 @@
+{
+  "active": false,
+  "connections": {
+    "Stop Typing": {
+      "main": [
+        [
+          {
+            "node": "Kirim Balasan",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start Typing": {
+      "main": [
+        [
+          {
+            "node": "Tunggu",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Jika On Hold Chat Label",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WAHA Trigger": {
+      "main": [
+        [],
+        [
+          {
+            "node": "WAHA Input",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [],
+        []
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WAHA Input": {
+      "main": [
+        [
+          {
+            "node": "Cek Jika Dari Saya",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cek Personal Chat": {
+      "main": [
+        [
+          {
+            "node": "Cek Label",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Jika On Hold Chat Label": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tunggu": {
+      "main": [
+        [
+          {
+            "node": "Stop Typing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Jika Balas Pesan Dari App WA": {
+      "main": [
+        [
+          {
+            "node": "Pasang Label Hold Chat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cek Jika Dari Saya": {
+      "main": [
+        [
+          {
+            "node": "Jika Balas Pesan Dari App WA",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Cek Personal Chat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cek Label": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "AI Agent Laporan1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent Laporan",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Start Typing1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Stop Typing1": {
+      "main": [
+        [
+          {
+            "node": "Kirim Balasan2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start Typing1": {
+      "main": [
+        [
+          {
+            "node": "Tunggu1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tunggu1": {
+      "main": [
+        [
+          {
+            "node": "Stop Typing1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Stop Typing2": {
+      "main": [
+        [
+          {
+            "node": "Kirim Balasan1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start Typing2": {
+      "main": [
+        [
+          {
+            "node": "Tunggu2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tunggu2": {
+      "main": [
+        [
+          {
+            "node": "Stop Typing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Start Typing2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent Laporan",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet in Google Sheets": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent Laporan",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Stop Typing3": {
+      "main": [
+        [
+          {
+            "node": "Kirim Balasan3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start Typing3": {
+      "main": [
+        [
+          {
+            "node": "Tunggu3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tunggu3": {
+      "main": [
+        [
+          {
+            "node": "Stop Typing3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent Laporan": {
+      "main": [
+        [
+          {
+            "node": "Start Typing6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Start Typing4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Append row in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet1": {
+      "main": [
+        [
+          {
+            "node": "Start Typing5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Stop Typing4": {
+      "main": [
+        [
+          {
+            "node": "Kirim Balasan4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start Typing4": {
+      "main": [
+        [
+          {
+            "node": "Tunggu4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tunggu4": {
+      "main": [
+        [
+          {
+            "node": "Stop Typing4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Stop Typing5": {
+      "main": [
+        [
+          {
+            "node": "Kirim Balasan5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start Typing5": {
+      "main": [
+        [
+          {
+            "node": "Tunggu5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tunggu5": {
+      "main": [
+        [
+          {
+            "node": "Stop Typing5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent Laporan1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Stop Typing6": {
+      "main": [
+        [
+          {
+            "node": "Kirim Balasan6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start Typing6": {
+      "main": [
+        [
+          {
+            "node": "Tunggu6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tunggu6": {
+      "main": [
+        [
+          {
+            "node": "Stop Typing6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent Laporan1": {
+      "main": [
+        [
+          {
+            "node": "Start Typing6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory2": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent Laporan1",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cek_Jadwal_Lapangan": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent Laporan1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-20T02:53:54.566Z",
+  "id": "QidGOE5oW8ouyrxw",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Booking System",
+  "nodes": [
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Stop Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        740,
+        2220
+      ],
+      "id": "18fe8ece-1ebe-45e5-aa3a-c40de01da7cf",
+      "name": "Stop Typing",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Start Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.id }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        300,
+        2220
+      ],
+      "id": "232b8d86-40e5-443b-b265-3222dea487bf",
+      "name": "Start Typing",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        1000
+      ],
+      "id": "c2036803-469f-4b6f-b565-b25bbc493912",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('Cek Jika Dari Saya').item.json.payload._data.message.conversation }}",
+        "options": {
+          "systemMessage": "=kamu adalah parser text booking system lapangan tenis yang mengubah input text fleksibel menjadi format data yang terstruktur dan siap disimpan.\n\nWaktu Sekarang: {{ $now }}  \nTanggal Hari Ini: {{ $today.format('yyyy-MM-dd') }}\nJam Operasional Lapangan:\nSetiap Hari dari 06.00 sampai 22.00 WIB  \nDi luar jam operasional, lapangan TUTUP dan tidak dapat dibooking.\n\nTUGAS: Analisa input teks booking lapangan tenis dari user dan ubah menjadi format PERSIS seperti ini:\n\nID : [id otomatis berupa angka berurutan setiap transaksi]\nNO_TRANSAKSI : [kode format \"LT-bulantahun-nomorurut\", contoh: LT-0825-001]\nTGL_BOOKING : [tanggal booking yang ditentukan oleh user, bisa berupa \"hari ini\", \"besok\", atau format tanggal]\nJAM_MULAI : [jam mulai main, format 12 jam atau 24 jam, dikonversi ke 24 jam dengan titik sebagai pemisah, contoh: 08.00]\nJAM_SELESAI : [jam selesai main, format sama seperti di atas]\nDURASI : [hitung dari waktu_akhir - waktu_awal, dalam satuan Jam]\nNO_LAPANGAN : [nomor lapangan dipilih dari \"Lapangan 1\" sampai \"Lapangan 4\". Jika tidak disebutkan, pilih otomatis dari yang tersedia]\nNAMA_PEMESAN : [nama pemesan (gunakan nama default jika tidak disebutkan, misal: \"Pengguna Tidak Dikenal\")]\nNO_TELP : {{ $('WAHA Trigger').item.json.payload.from }}\nTGL_TRANSAKSI : {{ $now.format('dd-MM-yyyy') }}\nTOTAL_BAYAR : [durasi * 40.000, hasil dalam contoh format: 40.000]\nSTATUS_LAPANGAN : [isi secara otomatis dengan kata \"BOOKED\"]\n\n\nJika input tidak bisa dikenali atau tidak lengkap untuk diproses, berikan:\nERROR: text tidak dapat dipahami oleh booking system\n\nCONTOH:\nInput : \"booking lapangan hari ini di lapangan 1 dari jam 8 sampai jam 9 pagi\"\nOutput : \nID : 1  \nNO_TRANSAKSI : LT-0825-001  \nTGL_BOOKING : 01/08/2025  \nJAM_MULAI : 08.00  \nJAM_SELESAI : 09.00  \nDURASI : 1 Jam  \nNO_LAPANGAN : Lapangan 1  \nNAMA_PEMESAN : Aditya Pratama Febriono  \nNO_TELP : {{ $('WAHA Trigger').item.json.payload.from }}  \nTGL_TRANSAKSI : {{ $now.format('dd-MM-yyyy') }}\nTOTAL_BAYAR : 40.000\nSTATUS_LAPANGAN : BOOKED\n\njika tidak bisa dipahami, berikan:\nERROR: text tidak dapat dipahami oleh booking system\n\nPENTING:\n- TIDAK PERLU penjelasan, cukup tampilkan hasil akhir dengan format seperti di atas.\n- jangan tambahkan teks tambahan, hanya tampilkan hasil JSON-like di atas.\n- gunakan nama dan tanggal sesuai konteks jika disebutkan.\n- Gunakan format jam 24 jam dengan titik\n- Tidak dapat melakukan booking jika waktu di luar jam operasional (sebelum 06.00 atau sesudah 22.00)."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        2100,
+        900
+      ],
+      "id": "cfe0bf59-3fec-4198-ae45-3ae59acc3593",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {},
+      "type": "@devlikeapro/n8n-nodes-waha.wahaTrigger",
+      "typeVersion": 202502,
+      "position": [
+        300,
+        440
+      ],
+      "id": "8266f828-7490-43fe-bac0-9adcc1411c60",
+      "name": "WAHA Trigger",
+      "webhookId": "35c688f5-06ce-4261-816b-1e3a57db06ed"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        2120,
+        1120
+      ],
+      "id": "d46b3497-e5d6-4999-8035-ef0da4231323",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "Xapk9tmeV0qasCh0",
+          "name": "Google Gemini(PaLM) Api"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        520,
+        900
+      ],
+      "id": "2bbeb13c-ef75-42ed-9cfd-6bf4bbbe2931",
+      "name": "WAHA Input"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('WAHA Input').item.json.session }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        2240,
+        1120
+      ],
+      "id": "dd760d07-2b12-45c3-b9a1-9163f02fe04b",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "ac89cc91-c202-498c-a7f0-acdffccf8821",
+              "leftValue": "={{ $json.payload.from.split('@')[1] }}",
+              "rightValue": "c.us",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        960,
+        1000
+      ],
+      "id": "8c840056-7003-4203-91d2-02c2a5293344",
+      "name": "Cek Personal Chat"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "868c6a77-c8be-44e2-85d1-a8ac579f2548",
+              "leftValue": "={{ $json.data.some(item => item.name === \"Hold\") }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1620,
+        1000
+      ],
+      "id": "7c90e917-1b5e-4595-81ce-a2fe6f740526",
+      "name": "Jika On Hold Chat Label"
+    },
+    {
+      "parameters": {
+        "amount": "={{ Math.floor(Math.random() * 7) + 1; }}"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        520,
+        2220
+      ],
+      "id": "9b84e0bc-6002-45f7-b771-acc7d16caa52",
+      "name": "Tunggu",
+      "webhookId": "eba829bd-e335-4656-a307-7315dd29c05f",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Text",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "text": "={{ $('AI Agent1').item.json.output }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        960,
+        2220
+      ],
+      "id": "e5951103-9e05-4de7-b15c-78d54904bc81",
+      "name": "Kirim Balasan",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "Labels",
+        "operation": "Put Chat Labels",
+        "labels": "[\n  {\n    \"id\": \"9\"\n  }\n]",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        1180,
+        800
+      ],
+      "id": "23e15468-d12a-4971-a813-d9f7c15795fc",
+      "name": "Pasang Label Hold Chat",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "68697ad3-d3dc-4a26-81cd-077c551572b1",
+              "leftValue": "={{ $json.payload.source }}",
+              "rightValue": "app",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        960,
+        800
+      ],
+      "id": "e935e549-9275-4ae2-90ae-80065d1bfbcc",
+      "name": "Jika Balas Pesan Dari App WA"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b3602e7c-a540-47f9-ba41-cef2b5b9fd29",
+              "leftValue": "={{ $json.payload.fromMe }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        740,
+        900
+      ],
+      "id": "ab4df4b5-3989-49fa-ada1-37a0847044b0",
+      "name": "Cek Jika Dari Saya"
+    },
+    {
+      "parameters": {
+        "resource": "Labels",
+        "operation": "Get Chat Labels",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        1180,
+        1000
+      ],
+      "id": "c49cb3d0-f499-4832-bddf-f316636fbe05",
+      "name": "Cek Label",
+      "alwaysOutputData": true,
+      "executeOnce": false,
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $('WAHA Trigger').item.json.payload._data.message.conversation }}",
+                    "rightValue": "cek",
+                    "operator": {
+                      "type": "string",
+                      "operation": "startsWith"
+                    },
+                    "id": "0b63602a-b7a3-497c-8d75-4f5eb6602b14"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "656bccc4-2e04-49c3-b7e6-425eb26de11d",
+                    "leftValue": "={{ $('WAHA Trigger').item.json.payload._data.message.conversation }}",
+                    "rightValue": "/laporan",
+                    "operator": {
+                      "type": "string",
+                      "operation": "startsWith"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "dfa8914a-1e42-4e90-9f70-3dce164e42d6",
+                    "leftValue": "={{ $('WAHA Trigger').item.json.payload._data.message.conversation }}",
+                    "rightValue": "booking",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        1840,
+        1000
+      ],
+      "id": "24511ecb-0bcb-465d-8c0e-52f93f509ae3",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "8280d273-ee44-4256-9b24-f619e4d1df95",
+              "leftValue": "={{ $json.output }}",
+              "rightValue": "ERROR:",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2500,
+        1000
+      ],
+      "id": "cb9c10fd-7348-4f0f-a794-1d5c6e0a6517",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8",
+          "mode": "list",
+          "cachedResultName": "Booking System Tennis Field",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Booking",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ID": "={{ $json.output.match(/ID\\s*:\\s*(\\d+)/)[1].trim() }}",
+            "NO_TRANSAKSI": "={{ $json.output.match(/NO_TRANSAKSI\\s*:\\s*(LT-\\d{4}-\\d{3})/)[1] }}",
+            "TGL_BOOKING": "={{ $json.output.match(/TGL_BOOKING\\s*:\\s*(.+)/)[1].trim() }}",
+            "JAM_MULAI": "={{ $json.output.match(/JAM_MULAI\\s*:\\s*(.+)/)[1].trim() }}",
+            "JAM_SELESAI": "={{ $json.output.match(/JAM_SELESAI\\s*:\\s*(.+)/)[1].trim() }}",
+            "DURASI": "={{ $json.output.match(/DURASI\\s*:\\s*(.+)/)[1].trim() }}",
+            "NO_LAPANGAN": "={{ $json.output.match(/NO_LAPANGAN\\s*:\\s*(.+)/)[1].trim() }}",
+            "NAMA_PEMESAN": "={{ $json.output.match(/NAMA_PEMESAN\\s*:\\s*(.+)/)[1].trim() }}",
+            "NO_TELP": "={{ '+' + $json.output.match(/NO_TELP\\s*:\\s*(.+)/)[1].trim().replace(/@c\\.us$/, '') }}",
+            "TGL_TRANSAKSI": "={{ $now.format('dd/MM/yyyy') }}",
+            "WAKTU_TRANSAKSI": "={{ $now.format('HH.mm.dd') }}",
+            "TOTAL_BAYAR": "={{ $json.output.match(/TOTAL_BAYAR\\s*:\\s*(.+)/)[1].trim() }}",
+            "STATUS_LAPANGAN": "={{ $json.output.match(/STATUS_LAPANGAN\\s*:\\s*(.+)/)[1].trim() }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "NO_TRANSAKSI",
+              "displayName": "NO_TRANSAKSI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TGL_BOOKING",
+              "displayName": "TGL_BOOKING",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "JAM_MULAI",
+              "displayName": "JAM_MULAI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "JAM_SELESAI",
+              "displayName": "JAM_SELESAI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "DURASI",
+              "displayName": "DURASI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "NO_LAPANGAN",
+              "displayName": "NO_LAPANGAN",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "NAMA_PEMESAN",
+              "displayName": "NAMA_PEMESAN",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "NO_TELP",
+              "displayName": "NO_TELP",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TGL_TRANSAKSI",
+              "displayName": "TGL_TRANSAKSI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "WAKTU_TRANSAKSI",
+              "displayName": "WAKTU_TRANSAKSI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TOTAL_BAYAR",
+              "displayName": "TOTAL_BAYAR",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "STATUS_LAPANGAN",
+              "displayName": "STATUS_LAPANGAN",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        2720,
+        1100
+      ],
+      "id": "fec5c95d-86b6-406f-9b77-f2c763dbaa59",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "A91a9DLyo89xMZ3C",
+          "name": "Google Sheet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Stop Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        3160,
+        900
+      ],
+      "id": "357c42bc-3331-473e-8652-c52a1973fa16",
+      "name": "Stop Typing1",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Start Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.id }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        2720,
+        900
+      ],
+      "id": "352a8f27-9e20-4b2e-a715-6b65fa764bc7",
+      "name": "Start Typing1",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": "={{ Math.floor(Math.random() * 7) + 1; }}"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2940,
+        900
+      ],
+      "id": "ddd725c4-0a76-498e-a6ee-97b2e34dafda",
+      "name": "Tunggu1",
+      "webhookId": "eba829bd-e335-4656-a307-7315dd29c05f"
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Text",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "reply_to": "=",
+        "text": "=❌ AI Tidak Dapat Memahami Input Booking Lapangan\nContoh Dengan Format Yang Benar:\n\n\"Booking lapangan 1 hari Minggu jam 8 sampai jam 9 pagi atas nama Andi\"\n\n\"Saya mau main besok di lapangan 2 jam 16.00 sampai 17.00 atas nama Raka\"\n\n✅ Tips:\nSebutkan nomor lapangan yang ingin dibooking\nSebutkan tanggal dan jam main (mulai & selesai)\nSebutkan nama pemesan\n\nJika kamu hanya ingin cek ketersediaan, gunakan format seperti:\n\"cek lapangan besok jam 7 pagi\"",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        3380,
+        900
+      ],
+      "id": "07e921e2-c877-4ec9-9cfa-2aa9ad63e42c",
+      "name": "Kirim Balasan2",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Stop Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        3380,
+        1100
+      ],
+      "id": "7af3ea1d-8f93-46fb-a150-b4b7513e3aae",
+      "name": "Stop Typing2",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Start Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.id }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        2940,
+        1100
+      ],
+      "id": "ff705ca1-9bb2-44fe-b2eb-ddb79fc214aa",
+      "name": "Start Typing2",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": "={{ Math.floor(Math.random() * 7) + 1; }}"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3160,
+        1100
+      ],
+      "id": "35a0b2af-a6b9-460a-b4d4-40d24f3315e5",
+      "name": "Tunggu2",
+      "webhookId": "eba829bd-e335-4656-a307-7315dd29c05f"
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Text",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "reply_to": "=",
+        "text": "=✅ Booking Lapangan Tenis Berhasil\n\n📄 No. Transaksi : {{ $('Append row in sheet').item.json.NO_TRANSAKSI }}\n\n🏟️ Lapangan : {{ $('Append row in sheet').item.json.NO_LAPANGAN }}\n📅 Tanggal Booking : {{ $('Append row in sheet').item.json.TGL_BOOKING }}\n🕐 Jam Main : {{ $('Append row in sheet').item.json.JAM_MULAI }} - {{ $('Append row in sheet').item.json.JAM_SELESAI }}\n⏳ Durasi : {{ $('Append row in sheet').item.json.DURASI }}\n🧍 Nama Pemesan : {{ $('Append row in sheet').item.json.NAMA_PEMESAN }}\n📞 No. Telepon : {{ $('Append row in sheet').item.json.NO_TELP }}\n💰 Total Pembayaran : {{ $('Append row in sheet').item.json.TOTAL_BAYAR }}\n\n🗓️ Tanggal Transaksi : {{ $('Append row in sheet').item.json.TGL_TRANSAKSI }}\n\n🎾 Terima Kasih, Silakan Datang 20 Menit Sebelum Waktu Bermain. Semoga Permainanmu Menyenangkan ! ",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        3600,
+        1100
+      ],
+      "id": "660f947e-28d7-4d6d-a390-2c7b324b4741",
+      "name": "Kirim Balasan1",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        2120,
+        1620
+      ],
+      "id": "554d0b16-3499-4d00-938e-2f504a710c16",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "Xapk9tmeV0qasCh0",
+          "name": "Google Gemini(PaLM) Api"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8",
+          "mode": "list",
+          "cachedResultName": "Booking System Tennis Field",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Booking",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        2240,
+        1620
+      ],
+      "id": "00297f01-1178-4ec6-a680-56199a0fcadb",
+      "name": "Get row(s) in sheet in Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "A91a9DLyo89xMZ3C",
+          "name": "Google Sheet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Stop Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        2940,
+        1400
+      ],
+      "id": "cab994d1-9097-46a2-b193-84630049e372",
+      "name": "Stop Typing3",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Start Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.id }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        2500,
+        1400
+      ],
+      "id": "7d1f7407-1d7f-4689-b522-7be64b4cba5e",
+      "name": "Start Typing3",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": "={{ Math.floor(Math.random() * 7) + 1; }}"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2720,
+        1400
+      ],
+      "id": "d475af6d-0463-4a73-801d-dc5fb60fe757",
+      "name": "Tunggu3",
+      "webhookId": "eba829bd-e335-4656-a307-7315dd29c05f"
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Text",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "text": "={{ $('AI Agent Laporan').item.json.output }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        3160,
+        1400
+      ],
+      "id": "299403ed-1b6e-4076-8173-e46f8cf5d1d9",
+      "name": "Kirim Balasan3",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('Cek Jika Dari Saya').item.json.payload._data.message.conversation }}",
+        "options": {
+          "systemMessage": "Kamu adalah asisten laporan booking untuk user bangtutorial.\n\n🕒 INFORMASI WAKTU:\n\nWaktu sekarang: {{ $now }}\n\nTanggal hari ini: {{ $today.format('yyyy-MM-dd') }}\n\n🎯 TUGAS:\n\nAnalisa permintaan user untuk laporan booking lapangan tenis.\n\nGunakan tool \"catatan_booking\" untuk ambil data booking lapangan.\n\nFilter data sesuai periode yang diminta:\n\n\"hari ini\" → data booking tanggal hari ini\n\n\"minggu ini\" → data booking dalam 7 hari terakhir\n\n\"bulan ini\" → data booking dalam bulan berjalan\n\nHitung total booking dan durasi total pemakaian lapangan (dalam jam)\n\nTampilkan laporan rapi dalam Bahasa Indonesia\n\n📁 STRUKTUR DATA SHEETS:\n\nKolom A: Nama\n\nKolom B: No. Lapangan\n\nKolom C: Tanggal Booking\n\nKolom D: Waktu Mulai\n\nKolom E: Waktu Selesai\n\nKolom F: Durasi (dalam jam)\n\n📌 FORMAT LAPORAN:\n\n🎾 Laporan Booking Lapangan Tenis [Periode]\n📅 [Rentang Tanggal]\n\n📊 Total Booking: [jumlah booking] kali\n⏱️ Total Durasi Main: [total durasi] Jam\n\n📋 Detail Booking:\n📅 [Tanggal Booking]\n🧍 [Nama]\n🏟️ [No. Lapangan]\n🕐 Jam: [Waktu Mulai] - [Waktu Selesai]\n⏳ Durasi: [Durasi] Jam\n🔁 PENTING:\n\nUrutkan dari yang terbaru ke terlama\n\nGunakan format waktu 24 jam dengan titik (contoh: 16.30)\n\nTambahkan emoji sesuai format\n\nPisahkan setiap booking dengan garis --\n\nJika tidak ada data untuk periode, berikan pesan ramah:\n\n\"Tidak Ada Data Booking Lapangan Tenis Pada Periode Tersebut\""
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        2100,
+        1400
+      ],
+      "id": "965d7b28-428c-4fd9-adc9-e6b8c2bc7248",
+      "name": "AI Agent Laporan"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('Cek Jika Dari Saya').item.json.payload._data.message.conversation }}",
+        "options": {
+          "systemMessage": "=🤖 PROMPT AI AGENT - CUSTOMER SERVICE & PARSER BOOKING LAPANGAN TENIS\nKamu adalah AI Customer Service dan parser booking system lapangan tenis untuk user bangtutorial.\n\nTugasmu adalah:\n\nMembantu pengguna cek jadwal lapangan.\n\nMembantu pengguna melakukan booking lapangan.\n\nMengubah input booking menjadi data terstruktur dan siap disimpan.\n\n📌 FUNGSI 1 – CEK JADWAL LAPANGAN\nJika user bertanya tentang ketersediaan lapangan, tanggapi dengan format berikut:\n\nContoh Input:\n\n\"Apakah lapangan 2 kosong besok jam 7 pagi?\"\n\nOutput Format:\n\nyaml\nCopy\nEdit\n📅 *Jadwal Lapangan [No. Lapangan]*  \n🗓️ Tanggal: [tanggal booking yang diminta]  \n🕖 Jam: [jam yang diminta]  \n📌 Status: [Tersedia / Sudah Dibooking oleh (nama jika ada)]\n\nUntuk booking lapangan ini, silakan ketik:  \n\"Booking lapangan [nomor] tanggal [tanggal] jam [jam awal] sampai [jam akhir]\"\n📌 FUNGSI 2 – BOOKING LAPANGAN\nJika user ingin melakukan booking, analisa input teks dan ubah menjadi format data PERSIS seperti berikut:\n\nContoh Input:\n\n\"Saya mau booking lapangan 3 hari Sabtu jam 4 sampai jam 5 sore atas nama Raka\"\n\nOutput Format:\n\nyaml\nCopy\nEdit\nID : [id otomatis berupa angka berurutan setiap transaksi]  \nNO_TRANSAKSI : LT-[bulantahun]-[nomor urut]  \nTGL_BOOKING : [tanggal booking dalam format lengkap, contoh: 2 Agustus 2025]  \nJAM_MULAI : [jam mulai, format 24 jam titik, contoh: 16.00]  \nJAM_SELESAI : [jam selesai, contoh: 17.00]  \nDURASI : [durasi dalam jam, contoh: 1 Jam]  \nNO_LAPANGAN : Lapangan [1-4]  \nNAMA_PEMESAN : [nama pemesan, jika tidak disebut gunakan \"Pengguna Tidak Dikenal\"]  \nNO_TELP : {{ $('WAHA Trigger').item.json.payload.from }}  \nTGL_TRANSAKSI : {{ $now.format('dd-MM-yyyy') }}\nContoh Output:\n\nyaml\nCopy\nEdit\nID : 1  \nNO_TRANSAKSI : LT-0825-001  \nTGL_BOOKING : 1 Agustus 2025  \nJAM_MULAI : 08.00  \nJAM_SELESAI : 09.00  \nDURASI : 1 Jam  \nNO_LAPANGAN : Lapangan 1  \nNAMA_PEMESAN : Aditya Pratama Febriono  \nNO_TELP : {{ $('WAHA Trigger').item.json.payload.from }}  \nTGL_TRANSAKSI : {{ $now.format('dd-MM-yyyy') }}\n⚠️ JIKA INPUT TIDAK DIPAHAMI\nJika input user tidak jelas, tidak lengkap, atau tidak bisa diproses, tampilkan:\n\nperl\nCopy\nEdit\nERROR: text tidak dapat dipahami oleh booking system\n\nMaaf, saya belum bisa memahami permintaan Anda 😅  \nSilakan tulis ulang dengan format seperti:  \n- \"Cek lapangan 2 besok jam 7 pagi\"  \n- \"Booking lapangan 1 hari Minggu jam 8 sampai jam 9 pagi atas nama Andi\"\n📎 CATATAN TEKNIS\nGunakan format waktu 24 jam dengan titik, contoh: 16.30\n\nUrutan field output tidak boleh diubah\n\nOutput harus bersih, tanpa penjelasan tambahan\n\nParsing harus fleksibel terhadap kata kunci seperti: \"besok\", \"hari ini\", \"minggu depan\", dan jam dalam bentuk \"jam 5 sore\", \"pukul 08.00\", dll."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        300,
+        1760
+      ],
+      "id": "62b10bc3-b67a-441b-902a-00394cc193f8",
+      "name": "AI Agent",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        320,
+        1980
+      ],
+      "id": "301597d7-ac86-42b4-a9d1-95c367364953",
+      "name": "Google Gemini Chat Model2",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "Xapk9tmeV0qasCh0",
+          "name": "Google Gemini(PaLM) Api"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('WAHA Input').item.json.session }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        440,
+        1980
+      ],
+      "id": "5d9642b3-8a2e-43f0-8259-62a48795c5a7",
+      "name": "Simple Memory1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "8280d273-ee44-4256-9b24-f619e4d1df95",
+              "leftValue": "={{ $json.output }}",
+              "rightValue": "ERROR:",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        660,
+        1860
+      ],
+      "id": "960a2e48-4359-4fa3-9ef1-feaa842f602b",
+      "name": "If",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8",
+          "mode": "list",
+          "cachedResultName": "Booking System Tennis Field",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Booking",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ID": "{{ $json.output.match(/ID: (.+)/)[1] }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "NO_TRANSAKSI",
+              "displayName": "NO_TRANSAKSI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TGL_BOOKING",
+              "displayName": "TGL_BOOKING",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "JAM_MULAI",
+              "displayName": "JAM_MULAI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "JAM_SELESAI",
+              "displayName": "JAM_SELESAI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "DURASI",
+              "displayName": "DURASI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "NO_LAPANGAN",
+              "displayName": "NO_LAPANGAN",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "NAMA_PEMESAN",
+              "displayName": "NAMA_PEMESAN",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "NO_TELP",
+              "displayName": "NO_TELP",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TGL_TRANSAKSI",
+              "displayName": "TGL_TRANSAKSI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        880,
+        1960
+      ],
+      "id": "f195c957-976e-450a-b2c2-c1f90282071f",
+      "name": "Append row in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "A91a9DLyo89xMZ3C",
+          "name": "Google Sheet"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Stop Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        1320,
+        1760
+      ],
+      "id": "d9c4ddab-f149-4155-bbcc-266028281fbf",
+      "name": "Stop Typing4",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Start Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.id }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        880,
+        1760
+      ],
+      "id": "7cd95afb-f470-4112-a44e-1e0d0eaa07cf",
+      "name": "Start Typing4",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "amount": "={{ Math.floor(Math.random() * 7) + 1; }}"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1100,
+        1760
+      ],
+      "id": "77374ee2-fd3a-4e06-890b-4fba08e42249",
+      "name": "Tunggu4",
+      "webhookId": "eba829bd-e335-4656-a307-7315dd29c05f",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Text",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "reply_to": "=AI Tidak Dapat Memahami Input Booking\n\nContoh Dengan Format Yang Benar : \n- \"beli beras 10 liter Rp. 100.000 di toko beras\"  \n\nTips \n- Sebutkan Nama Barang Yang Dibeli \n- Sebutkan Harga Barang \n- Sebutkan Nama Toko",
+        "text": "={{ $('AI Agent1').item.json.output }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        1540,
+        1760
+      ],
+      "id": "9653a14c-127c-40a5-9f74-840a23b96567",
+      "name": "Kirim Balasan4",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Stop Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        1540,
+        1960
+      ],
+      "id": "b4a95f8a-0ff4-4474-99f9-058f42008731",
+      "name": "Stop Typing5",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Start Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.id }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        1100,
+        1960
+      ],
+      "id": "c20e030a-a9c4-42bb-b16b-8ba87cbdb534",
+      "name": "Start Typing5",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "amount": "={{ Math.floor(Math.random() * 7) + 1; }}"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1320,
+        1960
+      ],
+      "id": "938f698f-745e-4f94-837a-b3431a7bb211",
+      "name": "Tunggu5",
+      "webhookId": "eba829bd-e335-4656-a307-7315dd29c05f",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Text",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "reply_to": "={{ $('AI Agent').item.json.output }}",
+        "text": "=",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        1760,
+        1960
+      ],
+      "id": "6263cdab-6c65-4d32-b278-7393a00f70ca",
+      "name": "Kirim Balasan5",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        2060,
+        720
+      ],
+      "id": "7dd31f49-8fb6-4dbc-ad03-c1730b82d429",
+      "name": "Google Gemini Chat Model3",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "Xapk9tmeV0qasCh0",
+          "name": "Google Gemini(PaLM) Api"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Stop Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        2940,
+        600
+      ],
+      "id": "01a8b9c7-5aff-4ec3-b006-456f1cb4963d",
+      "name": "Stop Typing6",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Start Typing",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.id }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        2500,
+        600
+      ],
+      "id": "628ffb38-39dd-430a-9f70-2d2160b3a265",
+      "name": "Start Typing6",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": "={{ Math.floor(Math.random() * 7) + 1; }}"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2720,
+        600
+      ],
+      "id": "ee8ebcb2-734f-4967-932c-3245fe3d7f46",
+      "name": "Tunggu6",
+      "webhookId": "eba829bd-e335-4656-a307-7315dd29c05f"
+    },
+    {
+      "parameters": {
+        "resource": "Chatting",
+        "operation": "Send Text",
+        "session": "={{ $('WAHA Input').item.json.session }}",
+        "chatId": "={{ $('WAHA Input').item.json.payload.from }}",
+        "text": "={{ $('AI Agent Laporan1').item.json.output }}",
+        "requestOptions": {}
+      },
+      "type": "@devlikeapro/n8n-nodes-waha.WAHA",
+      "typeVersion": 202502,
+      "position": [
+        3160,
+        600
+      ],
+      "id": "589ce8b1-79c3-4671-918c-4000e725aa6c",
+      "name": "Kirim Balasan6",
+      "credentials": {
+        "wahaApi": {
+          "id": "pdbXWGVB4TN8Thw0",
+          "name": "WAHA account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('WAHA Input').item.json.payload._data.message.conversation }}",
+        "options": {
+          "systemMessage": "prompt: AI Agent Cek Ketersediaan Lapangan Tenis\ndeskripsi: |\n  Kamu adalah AI Customer Service untuk layanan cek jadwal dan ketersediaan lapangan tenis. \n  Tugasmu adalah menjawab ketersediaan lapangan tenis berdasarkan input user.\n\naturan_penting:\n  - Gunakan jam format 24 jam dengan titik, contoh: 08.00 - 10.00\n  - Waktu operasional: Setiap hari dari 06.00 - 22.00 WIB\n  - Di luar jam tersebut, status: TUTUP\n  - Tidak menambahkan penjelasan apapun selain format output\n  - Jika input tidak lengkap atau tidak dipahami, balas dengan ERROR\n\nekstrak_input:\n  - Tanggal booking (contoh: hari ini, besok, 2 Agustus 2025)\n  - Jam booking (format apapun, ubah ke 24 jam dengan titik)\n  - Nomor lapangan (opsional, jika tidak disebut, tampilkan semua)\n\nstruktur_data_booking:\n  - tgl_booking: tanggal booking\n  - jam_mulai: jam mulai main\n  - jam_selesai: jam selesai main\n  - no_lapangan: nomor lapangan\n  - status_lapangan: \"BOOKED\" atau \"TERSEDIA\"\n  - nama_pemesan: nama orang (jika sudah dipesan)\n\ncontoh_input_user:\n  - \"Cek lapangan 2 besok jam 10 pagi\"\n  - \"Lapangan mana yang kosong hari Minggu jam 7 malam\"\n  - \"Semua lapangan kosong gak hari ini jam 8?\"\n\nformat_output:\n  jika_nomor_lapangan_disebutkan: |\n    Jadwal Lapangan {{no_lapangan}}  \n    Tanggal : {{tgl_booking}}  \n    Jam : {{jam_mulai}} - {{jam_selesai}}  \n    Status : {{ status_lapangan == \"BOOKED\" ? \"❌ Sudah Dipesan oleh \" ~ nama_pemesan : \"✅ Tersedia\" }}\n\n    Untuk booking lapangan ini, ketik:  \n    Booking lapangan {{no_lapangan}} tanggal {{tgl_booking}} jam {{jam_mulai}} sampai {{jam_selesai}} atas nama [nama kamu]\n\n  jika_tidak_disebutkan_nomor_lapangan: |\n    Ketersediaan Semua Lapangan  \n    Tanggal : {{tgl_booking}}  \n    Jam : {{jam_mulai}} - {{jam_selesai}}\n\n    Lapangan 1 : {{status_l1}}  \n    Lapangan 2 : {{status_l2}}  \n    Lapangan 3 : {{status_l3}}  \n    Lapangan 4 : {{status_l4}}\n\n    Untuk booking, ketik:  \n    Booking lapangan [nomor] tanggal [tgl_booking] jam [jam_mulai] sampai [jam_selesai] atas nama [nama kamu]\n\n  jika_diluar_jam_operasional: |\n    Jadwal Tidak Tersedia  \n    Tanggal : {{tgl_booking}}  \n    Jam : {{jam_mulai}} - {{jam_selesai}}  \n    Status : TUTUP (di luar jam operasional 06.00 - 22.00 WIB)\n\n  jika_input_tidak_dipahami: |\n    ERROR: Permintaan tidak dapat dipahami oleh sistem booking\n\n    Contoh yang valid:\n    - \"Apakah lapangan 1 kosong besok jam 4 sore?\"\n    - \"Lapangan mana saja yang kosong hari Minggu jam 10?\"\n"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        2100,
+        500
+      ],
+      "id": "56cfb25c-a45f-4112-bc88-a41ea4d44aac",
+      "name": "AI Agent Laporan1"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('WAHA Input').item.json.session }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        2180,
+        720
+      ],
+      "id": "2c7e2505-55ea-4336-9105-127339b70205",
+      "name": "Simple Memory2"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8",
+          "mode": "list",
+          "cachedResultName": "Booking System Tennis Field",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Booking",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1_jf0MhKseI9y7DAvxnnnLimZ-ZJ-oIlmk8gxODpy6s8/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        2300,
+        720
+      ],
+      "id": "bedb8dd7-9269-455b-b769-33a1ab25209e",
+      "name": "Cek_Jadwal_Lapangan",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "A91a9DLyo89xMZ3C",
+          "name": "Google Sheet"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-07-20T02:53:54.569Z",
+      "updatedAt": "2025-07-20T02:53:54.569Z",
+      "role": "workflow:owner",
+      "workflowId": "QidGOE5oW8ouyrxw",
+      "projectId": "OvJ502o4d8UTml2X"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-08-02T12:19:03.000Z",
+  "versionId": "c9d74fa3-b5b7-43e3-b90c-9f52386275d5"
+}
