@@ -1,0 +1,496 @@
+{
+  "active": false,
+  "connections": {
+    "If": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Reservasi Lapangan Tenis": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-05T01:41:42.501Z",
+  "id": "qY28KmHph5MRKUh2",
+  "isArchived": false,
+  "meta": null,
+  "name": "Tennis Court Reservation",
+  "nodes": [
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f88e1f83-e5b2-457f-9103-5947190366bb",
+              "leftValue": "={{ $json.message.text }}",
+              "rightValue": "=laporan",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {
+          "ignoreCase": false
+        }
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -380,
+        200
+      ],
+      "id": "27b25c3a-f9b1-4fd1-afd5-539c074c0cd3",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "PERAN & TUJUAN UTAMA\nKamu adalah \"Asisten Pelayanan Lapangan Tenis Cerdas\" yang bernama \"SiTennis\" yang berspesialisasi dalam manajemen pemesanan lapangan tenis. Tujuan utamamu adalah:\n- Jika ada perintah laporan maka kamu akan membaca dan menganalisis laporan pemesanan lapangan tenis dari Google Sheet \"Reservasi Lapangan Tenis\" (jika perintah laporan).\n\n# LOGIKA DASAR PERINTAH\n• Jika perintah dimulai dengan \"laporan\" → user ingin membaca laporan lapangan tenis dari Google Sheet \"Reservasi Lapangan Tenis\" dengan penyajian data seperti ini : \n\n• Tanggal Pemesanan\n• Nama Pemesan\n• Nomor Lapangan\n• Jam Mulai\n• Jam Selesai\n• Durasi (Jam)\n• Total Biaya\n• Status Pembayaran\n• Metode Pembayaran\n\n# KEMAMPUAN\nJika laporan : filter dan hitung\n\nGunakan Bahasa Indonesia profesional dan ramah.",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        -120,
+        -100
+      ],
+      "id": "3d02f282-7ca3-4279-a9a7-c9e439768831",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {}
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        -120,
+        400
+      ],
+      "id": "f76f1f9c-7134-43df-ad05-e48619e0aeb4",
+      "name": "Basic LLM Chain",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "includeOtherFields": true,
+        "include": "selected",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        280,
+        400
+      ],
+      "id": "25f3b31d-7f52-467c-805d-b7b216877457",
+      "name": "Edit Fields",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        120
+      ],
+      "id": "c1f4ae07-08b4-4f0d-9450-160450927e38",
+      "name": "Google Gemini Chat Model"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Telegram Trigger').item.json.message.chat.id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -40,
+        120
+      ],
+      "id": "8fd76b49-91ee-4eea-93e3-ca6cd3423f8e",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -100,
+        620
+      ],
+      "id": "01e07171-d9ff-4357-ab46-d20f49e3b6f4",
+      "name": "Google Gemini Chat Model1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1o0hCN6fhKw91pGHP0uV5EEEoAu_28y0AellHAykTQJE",
+          "mode": "list",
+          "cachedResultName": "Lapangan-Tenis",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1o0hCN6fhKw91pGHP0uV5EEEoAu_28y0AellHAykTQJE/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 796593371,
+          "mode": "list",
+          "cachedResultName": "Tennis_Court",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1o0hCN6fhKw91pGHP0uV5EEEoAu_28y0AellHAykTQJE/edit#gid=796593371"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Tanggal Pemesanan",
+              "displayName": "Tanggal Pemesanan",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nama Pemesan",
+              "displayName": "Nama Pemesan",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nomor Lapangan",
+              "displayName": "Nomor Lapangan",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Jam Mulai",
+              "displayName": "Jam Mulai",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Jam Selesai",
+              "displayName": "Jam Selesai",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Durasi",
+              "displayName": "Durasi",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Total Biaya",
+              "displayName": "Total Biaya",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Status Pembayaran",
+              "displayName": "Status Pembayaran",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Metode Pembayaran",
+              "displayName": "Metode Pembayaran",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "my_field_1",
+              "displayName": "my_field_1",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "my_field_2",
+              "displayName": "my_field_2",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        500,
+        400
+      ],
+      "id": "85a0c43c-bda3-481c-af87-62217eefb887",
+      "name": "Google Sheets1",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "schemaType": "manual"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        20,
+        620
+      ],
+      "id": "8444915a-f63b-44ac-b3cf-f4a3669aec56",
+      "name": "Structured Output Parser",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -600,
+        200
+      ],
+      "id": "82fa7d0a-92f6-495c-ad0b-b78b41969ebb",
+      "name": "Telegram Trigger",
+      "webhookId": "f4662f11-1d6d-4699-90a1-a38aefa49cae",
+      "credentials": {
+        "telegramApi": {
+          "id": "nfx1ZQ94uVEH4Wlp",
+          "name": "APF Personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        280,
+        0
+      ],
+      "id": "02c71e69-b74e-43e5-9a61-caa7eb7f3f74",
+      "name": "Telegram",
+      "webhookId": "04d67ce1-6b7d-4408-9051-5f2b0f0d32a0"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1o0hCN6fhKw91pGHP0uV5EEEoAu_28y0AellHAykTQJE",
+          "mode": "list",
+          "cachedResultName": "Lapangan-Tenis",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1o0hCN6fhKw91pGHP0uV5EEEoAu_28y0AellHAykTQJE/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 796593371,
+          "mode": "list",
+          "cachedResultName": "Tennis_Court",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1o0hCN6fhKw91pGHP0uV5EEEoAu_28y0AellHAykTQJE/edit#gid=796593371"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        80,
+        120
+      ],
+      "id": "b77f0341-5273-4aef-9e5a-c3f28785cac3",
+      "name": "Reservasi Lapangan Tenis"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-07-05T01:41:42.503Z",
+      "updatedAt": "2025-07-05T01:41:42.503Z",
+      "role": "workflow:owner",
+      "workflowId": "qY28KmHph5MRKUh2",
+      "projectId": "OvJ502o4d8UTml2X"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-07T15:17:40.000Z",
+  "versionId": "b29c1d15-ce1b-4ecd-b459-af00f46d966b"
+}
