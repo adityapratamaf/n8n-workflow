@@ -1,0 +1,506 @@
+{
+  "active": false,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram": {
+      "main": [
+        [
+          {
+            "node": "Analyze Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Invoice Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "Invoice Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Database": {
+      "main": [
+        [
+          {
+            "node": "Get a file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Text": {
+      "main": [
+        [
+          {
+            "node": "Update Database",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a file": {
+      "main": [
+        [
+          {
+            "node": "Save File to Drive",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze Image": {
+      "main": [
+        [
+          {
+            "node": "Parse Text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set": {
+      "main": [
+        [
+          {
+            "node": "Invoice Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save File to Drive": {
+      "main": [
+        [
+          {
+            "node": "Set",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Invoice Agent": {
+      "main": [
+        [
+          {
+            "node": "Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-05T01:38:19.249Z",
+  "id": "9FXtGfjwNrAFhFeQ",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Invoice Reminder",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -280,
+        -140
+      ],
+      "id": "0f660af6-2db6-482e-bbd9-b74d1c7019d8",
+      "name": "Telegram Trigger",
+      "webhookId": "8e2c2fef-2406-4f25-8bd0-80c5b755a79d",
+      "credentials": {
+        "telegramApi": {
+          "id": "nfx1ZQ94uVEH4Wlp",
+          "name": "APF Personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "fileId": "={{ $json.message.document.file_id }}"
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -60,
+        -140
+      ],
+      "id": "cf04bffe-3695-4218-9771-915773fd5ee4",
+      "name": "Telegram",
+      "webhookId": "17c5e801-6362-4d9a-b88c-85cbc3ef02ad",
+      "credentials": {
+        "telegramApi": {
+          "id": "nfx1ZQ94uVEH4Wlp",
+          "name": "APF Personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        560
+      ],
+      "id": "88a9d2c1-523d-4f86-ae8e-2d8ff5ca97da",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "Xapk9tmeV0qasCh0",
+          "name": "Google Gemini(PaLM) Api"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Telegram Trigger').item.json.message.chat.id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        140,
+        560
+      ],
+      "id": "307a0d7f-16de-4cbc-b13b-e7d6552e09ed",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1WOdUqeMJfsWgOv2zoajgi_QvLw2stkSvLlADdjOe-Yw",
+          "mode": "list",
+          "cachedResultName": "Finance Daily Automation",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1WOdUqeMJfsWgOv2zoajgi_QvLw2stkSvLlADdjOe-Yw/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1507734087,
+          "mode": "list",
+          "cachedResultName": "Finence_Invoice",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1WOdUqeMJfsWgOv2zoajgi_QvLw2stkSvLlADdjOe-Yw/edit#gid=1507734087"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Invoice Number": "={{ $json.invoiceNumber }}",
+            "Date": "={{ $json.invoiceDate }}",
+            "Total Amount": "={{ $json.totalAmount }}",
+            "Billing Address": "={{ $json.billingAddress }}",
+            "Due Date": "={{ $json.dueDate }}",
+            "Notes": "={{ $json.notes }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Invoice Number",
+              "displayName": "Invoice Number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Date",
+              "displayName": "Date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Total Amount",
+              "displayName": "Total Amount",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Billing Address",
+              "displayName": "Billing Address",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Due Date",
+              "displayName": "Due Date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Notes",
+              "displayName": "Notes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -60,
+        100
+      ],
+      "id": "281fb0a3-56ac-48d4-ae45-4bca0108041d",
+      "name": "Update Database",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "A91a9DLyo89xMZ3C",
+          "name": "Google Sheet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const results = $json['ParsedResults'];\nconst text = results?.[0]?.['ParsedText'] || '';\n\n// Normalisasi teks (hapus \\r, trim spasi)\nconst cleanText = text.replace(/\\r/g, '').trim();\n\n// Cari pola berdasarkan isi (tanpa label)\nconst invoiceNumber = cleanText.match(/INV[-\\w]+/)?.[0] || '';\nconst invoiceDate = cleanText.match(/\\d{4}-\\d{2}-\\d{2}/)?.[0] || '';\nconst dueDateMatch = [...cleanText.matchAll(/\\d{4}-\\d{2}-\\d{2}/g)];\nconst dueDate = dueDateMatch?.[1]?.[0] || ''; // ambil tanggal ke-2 (assume due date)\n\nconst billingAddress = cleanText.match(/(\\d{1,4}.*(Street|Jl\\.|Road|Indonesia))/i)?.[0] || '';\nconst totalAmount = cleanText.match(/(?:IDR|Rp)[\\s:]?([\\d.,]+)/i)?.[1] || '';\nconst notes = cleanText.match(/Please[\\s\\S]+?(?=Printed|$)/i)?.[0]?.trim() || '';\n\nconst parsedData = {\n  invoiceNumber,\n  invoiceDate,\n  totalAmount,\n  billingAddress,\n  dueDate,\n  notes,\n};\n\nreturn [{ json: parsedData }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -280,
+        100
+      ],
+      "id": "f46b0e1b-b1be-4157-8d26-a79503949496",
+      "name": "Parse Text"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "fileId": "={{ $('Telegram Trigger').item.json.message.document.file_id }}"
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        160,
+        100
+      ],
+      "id": "27534392-8557-406c-a959-cc86cad9e5fb",
+      "name": "Get a file",
+      "webhookId": "8455f968-f5f9-442e-a67f-aadba3bd31f9",
+      "credentials": {
+        "telegramApi": {
+          "id": "nfx1ZQ94uVEH4Wlp",
+          "name": "APF Personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.ocr.space/parse/image",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "K84088630088957"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        160,
+        -140
+      ],
+      "id": "eb9e542a-d8b8-41e1-ac3a-4a6283959df7",
+      "name": "Analyze Image"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "599ba235-4e40-41e4-81f1-17a49912de88",
+              "name": "Invoice Information",
+              "value": "={{ $('Analyze Image').item.json.ParsedResults[0].ParsedText }}",
+              "type": "string"
+            },
+            {
+              "id": "20be4b4c-2bd1-4ea8-91f3-66642396fbc5",
+              "name": "File",
+              "value": "={{ $json.name }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -280,
+        340
+      ],
+      "id": "1df5c22e-9ea8-4fc6-b0a3-4107106983c6",
+      "name": "Set"
+    },
+    {
+      "parameters": {
+        "name": "=Invoice [{{ $now.format('MMMM-dd-yyyy') }}]",
+        "driveId": {
+          "__rl": true,
+          "value": "My Drive",
+          "mode": "list",
+          "cachedResultName": "My Drive",
+          "cachedResultUrl": "https://drive.google.com/drive/my-drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "12D6TP2IPeCBFn6FFl_Y9dxB7RNrymmLL",
+          "mode": "list",
+          "cachedResultName": "Invoice",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/12D6TP2IPeCBFn6FFl_Y9dxB7RNrymmLL"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        380,
+        100
+      ],
+      "id": "d95728e5-b22d-4a02-ab9e-9976d1f4a5d5",
+      "name": "Save File to Drive",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "08yQlVWXTTkbdssm",
+          "name": "Google Drive"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=[Invoice Information]\n{{ $json['Invoice Information'] }}\n\n[File Name]\n{{ $json.File }}\n\n[Link to the Invoice Database]\nhttps://drive.google.com/drive/folders/12D6TP2IPeCBFn6FFl_Y9dxB7RNrymmLL?usp=sharing",
+        "options": {
+          "systemMessage": "🎯 Peran Sistem\nAnda adalah asisten efisien untuk faktur/invoice yang bertugas mengekstraksi informasi penting dari dokumen invoice dan memberikan tanggapan ringkas kepada pengguna.\n\n📝 Spesifikasi Tugas\nUcapkan terima kasih kepada pengguna atas pengiriman invoice. Ambil informasi berikut dari invoice:\n\nTotal tagihan\n\nTanggal jatuh tempo\n\nRingkasan catatan atau keterangan\n\nBeritahukan bahwa invoice asli telah disimpan di Google Drive, sertakan nama file dan tautan ke database invoice.\n\n🔍 Spesifik dan Konteks\nMulailah dengan ucapan terima kasih atas pengiriman invoice. Sampaikan informasi dengan jelas dan ringkas, agar pengguna dapat dengan cepat memahami detail invoice mereka serta mengakses database jika diperlukan.\n\n📌 Contoh\nInput:\n[Informasi Invoice]\nNomor Invoice: INV-12345\nTanggal: 01-12-2024\nTotal Tagihan: 950.000\nAlamat Penagihan: 123 Business Lane\nJatuh Tempo: 15-12-2024\nCatatan:\n\nMohon lakukan pembayaran sebelum jatuh tempo untuk menghindari denda keterlambatan.\n\nUntuk pertanyaan seputar invoice ini, hubungi billing@business.com atau (123) 456-7890.\n\nMetode pembayaran yang diterima: transfer bank, kartu kredit, atau PayPal.\n\nPembayaran yang terlambat akan dikenakan denda 5%.\n\n[Nama File]\nInvoice [05-Desember-2024]\n\n[Tautan ke Database Invoice]\nhttps://drive.google.com/drive/folders/12D6TP2IPeCBFn6FFl_Y9dxB7RNrymmLL?usp=sharing\n\nOutput:\nTerima kasih telah mengirimkan invoice!\n\nTotal tagihan adalah Rp950.000, dengan tanggal jatuh tempo pada 15-12-2024.\n\nCatatan:\n\nMohon lakukan pembayaran tepat waktu untuk menghindari denda keterlambatan.\n\nUntuk pertanyaan terkait invoice ini, hubungi billing@business.com atau (123) 456-7890.\n\nMetode pembayaran yang diterima: transfer bank, kartu kredit, dan PayPal.\n\nInvoice asli telah ditambahkan ke Google Drive dengan nama file \"Invoice [05-Desember-2024]\".\n\nAnda dapat mengakses database invoice melalui tautan berikut:\nKlik di sini untuk membuka database"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        -60,
+        340
+      ],
+      "id": "a4df398c-ecd0-4ccc-b36f-a03eb808df51",
+      "name": "Invoice Agent"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        300,
+        340
+      ],
+      "id": "57edba74-9059-47fd-b3ca-a55017c2c2e4",
+      "name": "Reply",
+      "webhookId": "11c812da-ad9a-40a4-8cae-1acdc031f38d",
+      "credentials": {
+        "telegramApi": {
+          "id": "nfx1ZQ94uVEH4Wlp",
+          "name": "APF Personal"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-07-05T01:38:19.252Z",
+      "updatedAt": "2025-07-05T01:38:19.252Z",
+      "role": "workflow:owner",
+      "workflowId": "9FXtGfjwNrAFhFeQ",
+      "projectId": "OvJ502o4d8UTml2X"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-07T15:10:51.000Z",
+  "versionId": "08966594-0c41-42b5-859a-a035b0b357e3"
+}
