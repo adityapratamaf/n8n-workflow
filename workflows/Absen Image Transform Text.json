@@ -1,0 +1,614 @@
+{
+  "active": false,
+  "connections": {
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Telegram Reply ChatBoot",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parsing Data": {
+      "main": [
+        [
+          {
+            "node": "Kondisi Status Absen",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Kondisi Status Absen": {
+      "main": [
+        [
+          {
+            "node": "Save",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download File 1": {
+      "main": [
+        [
+          {
+            "node": "Extract File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download File 2": {
+      "main": [
+        [
+          {
+            "node": "Save File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save": {
+      "main": [
+        [
+          {
+            "node": "Download File 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram ChatBoot": {
+      "main": [
+        [
+          {
+            "node": "Download File 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save File": {
+      "main": [
+        [
+          {
+            "node": "Set Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Data": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract File": {
+      "main": [
+        [
+          {
+            "node": "Analyze OCR",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze OCR": {
+      "main": [
+        [
+          {
+            "node": "Parsing Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-05T01:35:33.781Z",
+  "id": "Mapwnexq9MSAtXnC",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Absen Image Transform Text",
+  "nodes": [
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=[Absen Information]\n{{ $json['Absen Information'] }}\n\n[File Name]\n{{ $json.File }}\n\n[Link to the Absen File Database]\nhttps://drive.google.com/drive/folders/1JoVuJiaXq-2o4GgwXNbAVzJkHajtoXEu?usp=sharing\n\n[Link to the Absen Dokumen Database]\nhttps://docs.google.com/spreadsheets/d/1yrGZLypbwA-iQFesdKi4iLz2PYmNrz5jb4MoYMC24Bs/edit?usp=sharing\n",
+        "options": {
+          "systemMessage": "🎯 Peran Sistem\nAnda adalah asisten efisien untuk sistem kehadiran/absen yang bertugas mengekstraksi informasi penting dari foto atau data absen, lalu menyusunnya menjadi laporan ringkas dan informatif untuk pengguna.\n\n📝 Spesifikasi Tugas\nUcapkan terima kasih kepada pengguna atas pengiriman data absen. Ambil dan tampilkan informasi berikut dari foto atau input :\n\nTanggal absen\nWaktu absen\nAlamat lengkap (jalan, kelurahan, kecamatan, kota, provinsi)\nNama lengkap\nStatus absen\n\nBeritahukan bahwa data absen telah dicatat dan disimpan di Google Sheets atau Google Drive. Sertakan nama file dan tautan ke database absen.\n\n🔍 Spesifik dan Konteks\nMulailah dengan ucapan terima kasih atas pengiriman data absen. Tampilkan data yang berhasil diproses dengan rapi dan jelas. Tujuannya adalah agar pengguna bisa langsung melihat apakah informasi yang ditangkap sudah akurat, serta dapat mengakses database jika diperlukan.\n\n📌 Contoh\nInput (Data Absen):\n\nmakefile\nCopy\nEdit\nTanggal : 28/06/2025  \nWaktu : 16:49  \nJalan : No. 10 Jalan Inpres XI  \nKelurahan : Larangan  \nKecamatan : Ciledug  \nKota : Tangerang  \nProvinsi : Banten  \nNama : Aditya Pratama Febriono\nNama File (Google Sheet) :\nAbsen Harian [28-Juni-2025]\n\n✅ Output:\nTerima kasih telah mengirimkan data absen!\n\nBerikut detail kehadiran masuk / pulang Anda :\n👤 Nama : Aditya Pratama Febriono\n📅 Tanggal : 28/06/2025\n🕓 Waktu : 16:49\n📍 Lokasi :\nNo. 10 Jalan Inpres XI,\nKelurahan Larangan, Kecamatan Ciledug,\nKota Tangerang, Provinsi Banten\n\nData absen Anda telah dicatat dan disimpan dengan nama file : \n\"Absen Harian [28-Juni-2025]\"\n\n🔗 Tautan Database Dokumen Absen:\nhttps://docs.google.com/spreadsheets/d/1yrGZLypbwA-iQFesdKi4iLz2PYmNrz5jb4MoYMC24Bs/edit?usp=sharing\n\n🔗 Tautan Database File Absen:\nhttps://drive.google.com/drive/folders/1JoVuJiaXq-2o4GgwXNbAVzJkHajtoXEu?usp=sharing "
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        3960,
+        1540
+      ],
+      "id": "b3f44b7f-0ca2-4d72-9961-a3e5510c8fc2",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Telegram ChatBoot').item.json.message.chat.id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        4120,
+        1760
+      ],
+      "id": "871df250-546a-4a22-b7c9-609ffc115b25",
+      "name": "Simple Memory1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const text = $json.ParsedResults?.[0]?.ParsedText || '';\nconst lines = text.split('\\n').map(l => l.trim()).filter(Boolean);\n\nlet result = {\n  tanggal: '',\n  waktu: '',\n  jalan: '',\n  kelurahan: '',\n  kecamatan: '',\n  kota: '',\n  provinsi: '',\n  nama: '',\n};\n\nconst tanggalRegex = /^(\\d{2})[\\/\\-](\\d{2})[\\/\\-](\\d{4})$/;\n// Revisi waktuRegex agar bisa deteksi HH:MM dan HH:MM:SS\nconst waktuRegex = /^(\\d{2}):(\\d{2})(?::\\d{2})?$/;\n\nlines.forEach((line) => {\n  const lower = line.toLowerCase();\n\n  if (tanggalRegex.test(line)) {\n    const [_, d, m, y] = line.match(tanggalRegex);\n    result.tanggal = `${y}-${m}-${d}`;\n  } else if (waktuRegex.test(line)) {\n    result.waktu = line;\n  } else if (lower.includes('jalan') || lower.includes('jl')) {\n    result.jalan = line;\n  } else if (lower.includes('kelurahan')) {\n    result.kelurahan = line.replace(/kelurahan\\s*/i, '').trim();\n  } else if (lower.includes('kecamatan')) {\n    result.kecamatan = line.replace(/kecamatan\\s*/i, '').trim();\n  } else if (lower.includes('kota')) {\n    result.kota = line.replace(/kota\\s*/i, '').trim();\n  } else if (lower === 'banten' || lower.includes('provinsi')) {\n    result.provinsi = 'Banten';\n  } else if (/^[A-Z][a-z]+(?: [A-Z][a-z]+){1,3}$/.test(line)) {\n    result.nama = line;\n  }\n});\n\n// Fallback berdasarkan urutan sisa baris\nconst taken = Object.values(result);\nconst remaining = lines.filter(l => !taken.includes(l));\n\nif (!result.jalan && remaining[0]) result.jalan = remaining[0];\nif (!result.kelurahan && remaining[1]) result.kelurahan = remaining[1];\nif (!result.kecamatan && remaining[2]) result.kecamatan = remaining[2];\nif (!result.kota && remaining[3]) result.kota = remaining[3];\nif (!result.provinsi && remaining[4]) result.provinsi = remaining[4];\nif (!result.nama && remaining[5]) result.nama = remaining[5];\n\nreturn [{ json: result }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3960,
+        1300
+      ],
+      "id": "eb0074bc-1c6b-404d-a197-ccb6c25ea3a3",
+      "name": "Parsing Data"
+    },
+    {
+      "parameters": {
+        "jsCode": "const waktu = $json.waktu || \"\"; // ambil dari data sebelumnya, misal hasil OCR\nconst jam = parseInt(waktu.split(\":\")[0], 10);\n\nlet statusAbsen = \"\";\nif (!isNaN(jam)) {\n  statusAbsen = jam <= 12 ? \"Jam Masuk\" : \"Jam Pulang\";\n}\n\nreturn [\n  {\n    json: {\n      ...$json,\n      statusAbsen,\n    }\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4180,
+        1300
+      ],
+      "id": "fed91bce-7b90-4f7a-a804-9e267bb2d394",
+      "name": "Kondisi Status Absen"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "fileId": "={{ $json.message.photo[3].file_id }}"
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        3300,
+        1300
+      ],
+      "id": "5199ebaf-5988-4ed7-8486-2a2b7f2d43c2",
+      "name": "Download File 1",
+      "webhookId": "47fa1e07-f676-45b2-aa1d-80bd455b89ee",
+      "credentials": {
+        "telegramApi": {
+          "id": "nfx1ZQ94uVEH4Wlp",
+          "name": "APF Personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "fileId": "={{ $('Telegram ChatBoot').item.json.message.photo[3].file_id }}"
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        3300,
+        1540
+      ],
+      "id": "dfc848c6-7766-4fa5-8549-12084b95dcc7",
+      "name": "Download File 2",
+      "webhookId": "668289d8-6640-408a-b3d4-08cbc01d1b1f",
+      "credentials": {
+        "telegramApi": {
+          "id": "nfx1ZQ94uVEH4Wlp",
+          "name": "APF Personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1yrGZLypbwA-iQFesdKi4iLz2PYmNrz5jb4MoYMC24Bs",
+          "mode": "list",
+          "cachedResultName": "Project AI Automation",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1yrGZLypbwA-iQFesdKi4iLz2PYmNrz5jb4MoYMC24Bs/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Absen",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1yrGZLypbwA-iQFesdKi4iLz2PYmNrz5jb4MoYMC24Bs/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nama": "={{ $json.nama }}",
+            "Tanggal": "={{ $json.tanggal }}",
+            "Waktu": "={{ $json.waktu }}",
+            "Jalan": "={{ $json.jalan }}",
+            "Kelurahan": "={{ $json.kelurahan }}",
+            "Kecamatan": "={{ $json.kecamatan }}",
+            "Kota ": "={{ $json.kota }}",
+            "Provinsi": "={{ $json.provinsi }}",
+            "Status Absen": "={{ $json.statusAbsen }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Nama",
+              "displayName": "Nama",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Tanggal",
+              "displayName": "Tanggal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Waktu",
+              "displayName": "Waktu",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Jalan",
+              "displayName": "Jalan",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Kelurahan",
+              "displayName": "Kelurahan",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Kecamatan",
+              "displayName": "Kecamatan",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Kota ",
+              "displayName": "Kota ",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Provinsi",
+              "displayName": "Provinsi",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Status Absen",
+              "displayName": "Status Absen",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        3080,
+        1540
+      ],
+      "id": "8000b8d2-de18-4364-b59e-be1c06f16efa",
+      "name": "Save",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "A91a9DLyo89xMZ3C",
+          "name": "Google Sheet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        3080,
+        1300
+      ],
+      "id": "52e8ddd9-13f9-461d-815b-246fdf905747",
+      "name": "Telegram ChatBoot",
+      "webhookId": "3fb325ea-13fd-43f0-bbbb-37bbcf628792",
+      "credentials": {
+        "telegramApi": {
+          "id": "nfx1ZQ94uVEH4Wlp",
+          "name": "APF Personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "name": "=Absen : {{ $('Save').item.json.Nama }} [{{ $now.format('dd MMMM yyyy HH:mm') }}]",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1JoVuJiaXq-2o4GgwXNbAVzJkHajtoXEu",
+          "mode": "list",
+          "cachedResultName": "Absen",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1JoVuJiaXq-2o4GgwXNbAVzJkHajtoXEu"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        3520,
+        1540
+      ],
+      "id": "57c26802-112a-4972-a5b0-c60805d14405",
+      "name": "Save File",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "08yQlVWXTTkbdssm",
+          "name": "Google Drive"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "599ba235-4e40-41e4-81f1-17a49912de88",
+              "name": "Absen Information",
+              "value": "={{ $('Analyze OCR').item.json.ParsedResults[0].ParsedText }}",
+              "type": "string"
+            },
+            {
+              "id": "20be4b4c-2bd1-4ea8-91f3-66642396fbc5",
+              "name": "File",
+              "value": "={{ $json.name }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        3740,
+        1540
+      ],
+      "id": "7576a53b-a10c-4b75-8b69-94841e8fa348",
+      "name": "Set Data"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.telegram.org/file/bot7693275118:AAFJNRxu-wjlUDbdg4ra8RDJ3G6XyjNNn5Q/{{ $json.result.file_path }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file",
+              "outputPropertyName": "downloadedImage"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3520,
+        1300
+      ],
+      "id": "63c90149-a461-4d7c-8e12-f223abbe2226",
+      "name": "Extract File",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.ocr.space/parse/image",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "K84088630088957"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "language",
+              "value": "eng"
+            },
+            {
+              "name": "isOverlayRequired",
+              "value": "false"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "downloadedImage"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3740,
+        1300
+      ],
+      "id": "6dee80d5-5f6a-4a07-aa1a-5a95f03b10e8",
+      "name": "Analyze OCR"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram ChatBoot').item.json.message.chat.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        4320,
+        1540
+      ],
+      "id": "982846ac-6785-4565-8f2e-ae68e34975c3",
+      "name": "Telegram Reply ChatBoot",
+      "webhookId": "4d33b92b-a5d0-43c7-80a9-cb6482e6aa65",
+      "credentials": {
+        "telegramApi": {
+          "id": "nfx1ZQ94uVEH4Wlp",
+          "name": "APF Personal"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash",
+        "options": {
+          "temperature": 0.1
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        3940,
+        1760
+      ],
+      "id": "2b574719-6e92-4e1d-93cd-12dcce52c797",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "Xapk9tmeV0qasCh0",
+          "name": "Google Gemini(PaLM) Api"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-07-05T01:35:33.788Z",
+      "updatedAt": "2025-07-05T01:35:33.788Z",
+      "role": "workflow:owner",
+      "workflowId": "Mapwnexq9MSAtXnC",
+      "projectId": "OvJ502o4d8UTml2X"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-27T10:19:36.000Z",
+  "versionId": "1121db07-2de6-44b4-99fd-b7cd030bb73c"
+}
